@@ -13,14 +13,19 @@
 </body>
 <script type="text/javascript">
     $(function () {
-        $("#test").bind("click",function () {
+        $("#test").bind("click", function () {
             $.ajax({
-                url:"/test?page=1",
-                type:"get",
-                success:function (data) {
-                    var list = data.data[0].list;
-                    for (var i=0;i<list.length;i++){
-                        alert(list[i].test);
+                url: "/test?page=0",
+                type: "get",
+                success: function (data) {
+                    alert(233);
+                    if (data.flag) {
+                      location.href=data.url;
+                    } else {
+                        var list = data.data[0].list;
+                        for (var i = 0; i < list.length; i++) {
+                            alert(list[i].test);
+                        }
                     }
                 }
             });
