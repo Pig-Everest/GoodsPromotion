@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/js/jquery-3.1.0.min.js"></script>
+
+</head>
+<body>
+<div style="border: black 2px solid">
+    <input id="test" value="233"/>
+</div>
+</body>
+<script type="text/javascript">
+    $(function () {
+        $("#test").bind("click",function () {
+            $.ajax({
+                url:"/test?page=1",
+                type:"get",
+                success:function (data) {
+                    var list = data.data[0].list;
+                    for (var i=0;i<list.length;i++){
+                        alert(list[i].test);
+                    }
+                }
+            });
+        });
+    });
+</script>
+</html>
