@@ -23,5 +23,10 @@ public class TestController {
         }
         return new MyResponseEntity(HttpStatus.OK,"test",testService.test(page));
     }
+
+    @GetMapping(value = "testRedis")
+    public MyResponseEntity testRedis(String key,String value){
+        return new MyResponseEntity(HttpStatus.OK,"testRedis",testService.testRedis(key,value));
+    }
 }
 
