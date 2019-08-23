@@ -1,4 +1,4 @@
-package com.haut.promotion.redisConf;
+package com.haut.promotion.conf;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

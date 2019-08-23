@@ -99,6 +99,13 @@
             <version>2.4.2</version>
         </dependency>
 
+        <!--quartz依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <build>

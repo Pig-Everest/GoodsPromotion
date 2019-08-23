@@ -4,7 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.haut.promotion.domain.Test;
 import com.haut.promotion.myproperties.MyProperties;
-import com.haut.promotion.redisConf.DBRedis;
+import com.haut.promotion.conf.DBRedis;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.haut.promotion.mapper.TestMapper;

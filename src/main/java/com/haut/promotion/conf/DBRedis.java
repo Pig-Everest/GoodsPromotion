@@ -1,4 +1,4 @@
-package com.haut.promotion.redisConf;
+package com.haut.promotion.conf;
 
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
