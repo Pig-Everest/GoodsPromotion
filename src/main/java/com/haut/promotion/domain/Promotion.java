@@ -55,7 +55,7 @@ public class Promotion {
      * 促销描述
      */
     @Column(name = "promotiondescripe")
-    private Integer promotiondescripe;
+    private String promotiondescripe;
 
 
     /**
@@ -222,11 +222,11 @@ public class Promotion {
         this.promotionstyle = promotionstyle;
     }
 
-    public Integer getPromotiondescripe() {
+    public String getPromotiondescripe() {
         return promotiondescripe;
     }
 
-    public void setPromotiondescripe(Integer promotiondescripe) {
+    public void setPromotiondescripe(String promotiondescripe) {
         this.promotiondescripe = promotiondescripe;
     }
 }

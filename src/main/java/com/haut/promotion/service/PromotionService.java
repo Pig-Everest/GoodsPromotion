@@ -17,5 +17,10 @@ public interface PromotionService {
      * @return
      */
     Integer insertBuyMorePromotion(Promotion promotion);
+    /*
+
+    * 添加促销，返回主键*/
+    Integer isertPromotion(Promotion promotion);
+
 }
 

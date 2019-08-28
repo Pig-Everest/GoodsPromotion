@@ -1,7 +1,8 @@
 package com.haut.promotion.service;
 
 import com.haut.promotion.domain.Suit;
-public interface SuitService{
+
+public interface SuitService {
 
 
     int deleteByPrimaryKey(Integer id);
@@ -17,3 +18,4 @@ public interface SuitService{
     int updateByPrimaryKey(Suit record);
 
 }
+

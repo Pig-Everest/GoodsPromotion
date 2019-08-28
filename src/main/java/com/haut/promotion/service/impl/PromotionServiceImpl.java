@@ -34,5 +34,10 @@ public class PromotionServiceImpl implements PromotionService {
         promotionMapper.insertSelective(promotion);
         return promotion.getId();
     }
+
+   public Integer isertPromotion(Promotion promotion){
+       promotionMapper.insertSelective(promotion);
+       return promotion.getId();
+    }
 }
 

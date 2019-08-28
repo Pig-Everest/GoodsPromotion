@@ -16,4 +16,6 @@ public interface SuitPromotionService{
 
     int updateByPrimaryKey(SuitPromotion record);
 
+    Integer insertSuitPromotion(SuitPromotion suitPromotion);
+
 }

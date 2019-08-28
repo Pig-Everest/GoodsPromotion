@@ -1,17 +1,8 @@
 package com.haut.promotion.mapper;
 
 import com.haut.promotion.domain.SuitPromotion;
+import tk.mybatis.mapper.common.Mapper;
 
-public interface SuitPromotionMapper {
-    int deleteByPrimaryKey(Integer id);
+public interface SuitPromotionMapper extends Mapper<SuitPromotion> {
 
-    int insert(SuitPromotion record);
-
-    int insertSelective(SuitPromotion record);
-
-    SuitPromotion selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(SuitPromotion record);
-
-    int updateByPrimaryKey(SuitPromotion record);
 }

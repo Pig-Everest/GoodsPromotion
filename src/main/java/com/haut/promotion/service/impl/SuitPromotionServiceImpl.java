@@ -1,4 +1,4 @@
-package com.haut.promotion.service;
+package com.haut.promotion.service.impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
@@ -40,5 +40,9 @@ public class SuitPromotionServiceImpl implements SuitPromotionService{
     public int updateByPrimaryKey(SuitPromotion record) {
         return suitPromotionMapper.updateByPrimaryKey(record);
     }
+public     Integer insertSuitPromotion(SuitPromotion suitPromotion){
+  suitPromotionMapper.insertSelective(suitPromotion);
 
+  return  suitPromotion.getId();
+}
 }

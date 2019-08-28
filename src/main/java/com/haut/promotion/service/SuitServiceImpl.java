@@ -5,8 +5,9 @@ import javax.annotation.Resource;
 import com.haut.promotion.mapper.SuitMapper;
 import com.haut.promotion.domain.Suit;
 import com.haut.promotion.service.SuitService;
+
 @Service
-public class SuitServiceImpl implements SuitService{
+public class SuitServiceImpl implements SuitService {
 
     @Resource
     private SuitMapper suitMapper;
@@ -42,3 +43,4 @@ public class SuitServiceImpl implements SuitService{
     }
 
 }
+

@@ -30,17 +30,18 @@
     <h4 style="color:#CC3300;">促销规则</h4>
     <div style="width: auto; height: 400px; background-color:beige;">
         <br />
-        <form class="form-inline" action="#" method="post">
+        <form class="form-inline" action="/insertPromotion" method="post">
 
-            &nbsp;&nbsp;&nbsp;*推广范围：</label><input type="radio" value="全平台通用" name="range" />
-            <input type="radio" value="客户端使用" name="range" />客户端使用
+            &nbsp;&nbsp;&nbsp;*推广范围：
+            <input type="radio" value="全平台通用" name="promotionplatfrom" />全平台通用
+            <input type="radio" value="客户端使用" name="promotionplatfrom" />客户端使用
             <br />
             <br />
             <div class="form-group">
                 &nbsp;&nbsp;&nbsp;<label for="suitpromotionname">*活动名称：</label>
                 <input type="text" class="form-control" id="suitpromotionname" name = "promotionname" placeholder="活动名称" />
             </div>
-<br>
+<br><br><br>
             <div class="form-group">
                 &nbsp;&nbsp;&nbsp;*活动时间：</label>
                 <input type="datetime-local" class="form-control" name = "starttime" />&nbsp;至&nbsp;
@@ -50,17 +51,20 @@
             <br />
             <br />
             <div class="form-group">
-                &emsp;*套装规则描述：</label> <textarea class="form-control" rows="3"></textarea>
+                &emsp;*套装规则描述：</label> <textarea name="promotiondescripe" class="form-control" rows="3"></textarea>
             </div>
             <br />
             <br />
 
-            &nbsp;&nbsp;&nbsp;商品活动链接：</label><input type="text" class="form-control"  name = "activityUrl" placeholder="url" /><br /><br />
+            &nbsp;&nbsp;&nbsp;商品活动链接：</label><input type="text" class="form-control"  name = "promotionlinks" placeholder="url" /><br /><br />
             &nbsp;&nbsp;&nbsp;套装名字：</label><input type="text" class="form-control"  name = "suiname" placeholder="" /><br /><br />
 
-           选择商品 <select>
-            <option>请选择</option>
+           选择商品 <select name="goods">
+            <option value="1"> 请选择</option>
         </select>
+            <select name="goods">
+                <option value="2">请选择</option>
+            </select>
 
             &nbsp;&nbsp;&nbsp;套装价格：</label><input type="text" class="form-control"  name = "suitprice" placeholder="" /><br /><br />
 
