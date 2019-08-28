@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script  type="text/javascript"  src="/js/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="/js/jquery.form.js" ></script>
+
+
+<script>
+    $(function(){
+        $("#diva").hide();
+    });
+
+
+   function choosepromotionstyle(){
+
+       $("#diva").toggle(500);
+
+ $("#style option:gt(0)") .remove();
+
+       $.get("/selectAllPromotionStyle",function (d){
+           var str="";
+
+for(var i=0;i<d.length;i++){
+str+="<option value='"+d[i].id+"'>";
+str+=d[i].stylename;
+str+="</option>;"
+}
+
+           $("#style").append(str);
+       })
+    }
+
+
+</script>
+<h2>促销系统主界面</h2>
+<p></p>
+
+<ul>
+    <li onclick="choosepromotionstyle()">
+        选择促销方式
+    </li>
+</ul>
+
+<div id="diva">
+<form action="/choosePromotionStyle">
+<select id="style" name="style">
+<option value="0">请选择</option>
+</select>
+    <input type="submit" value="去编辑">
+</form>
+
+</div>
+</body>
+</html>
