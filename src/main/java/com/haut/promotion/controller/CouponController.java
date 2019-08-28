@@ -32,7 +32,7 @@ public class CouponController {
      * @return
      */
     @PostMapping("createCoupon")
-    public MyResponseEntity createCoupon(Promotion promotion,Coupon coupon, List<Goods> goodsInfo,String startTime,String endTime){
+    public MyResponseEntity createCoupon(Promotion promotion, Coupon coupon, List<Goods> goodsInfo, String startTime, String endTime){
         Integer promotionId = promotionService.insertPromotion(promotion);
         promotionstyleService.insertPromotionStyle(promotionId);
         goodsService.insertGoods(goodsInfo);

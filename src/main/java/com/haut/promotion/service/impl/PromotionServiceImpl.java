@@ -1,9 +1,10 @@
 package com.haut.promotion.service.impl;
 
 import com.haut.promotion.domain.Promotion;
+import com.haut.promotion.mapper.PromotionMapper;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.haut.promotion.mapper.PromotionMapper;
+
 import com.haut.promotion.service.PromotionService;
 
 @Service
@@ -22,6 +23,15 @@ public class PromotionServiceImpl implements PromotionService {
     public Integer insertPromotion(Promotion promotion) {
         promotionMapper.insertSelective(promotion);
         return promotionMapper.selectOne(promotion).getId();
+    }
+    /**
+     * 添加多买促销表
+     * @param promotion
+     * @return
+     */
+    @Override
+    public Integer insertBuyMorePromotion(Promotion promotion) {
+        return promotionMapper.insert(promotion);
     }
 }
 

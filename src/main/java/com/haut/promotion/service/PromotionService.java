@@ -11,5 +11,11 @@ public interface PromotionService {
      */
     Integer insertPromotion(Promotion promotion);
 
+    /**
+     * 添加多买促销表
+     * @param promotion
+     * @return
+     */
+    Integer insertBuyMorePromotion(Promotion promotion);
 }
 
