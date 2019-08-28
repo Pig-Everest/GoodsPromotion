@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haut.promotion.mapper.SuitPromotionMapper">
+  <resultMap id="BaseResultMap" type="com.haut.promotion.domain.SuitPromotion">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="suiname" jdbcType="VARCHAR" property="suiname" />
+    <result column="goodsids" jdbcType="VARCHAR" property="goodsids" />
+    <result column="suitprice" jdbcType="DECIMAL" property="suitprice" />
+    <result column="promotionid" jdbcType="INTEGER" property="promotionid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, suiname, goodsids, suitprice, promotionid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from suit_promotion
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from suit_promotion
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.haut.promotion.domain.SuitPromotion">
+    <!--@mbg.generated-->
+    insert into suit_promotion (id, suiname, goodsids, 
+      suitprice, promotionid)
+    values (#{id,jdbcType=INTEGER}, #{suiname,jdbcType=VARCHAR}, #{goodsids,jdbcType=VARCHAR}, 
+      #{suitprice,jdbcType=DECIMAL}, #{promotionid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.haut.promotion.domain.SuitPromotion">
+    <!--@mbg.generated-->
+    insert into suit_promotion
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="suiname != null">
+        suiname,
+      </if>
+      <if test="goodsids != null">
+        goodsids,
+      </if>
+      <if test="suitprice != null">
+        suitprice,
+      </if>
+      <if test="promotionid != null">
+        promotionid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="suiname != null">
+        #{suiname,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsids != null">
+        #{goodsids,jdbcType=VARCHAR},
+      </if>
+      <if test="suitprice != null">
+        #{suitprice,jdbcType=DECIMAL},
+      </if>
+      <if test="promotionid != null">
+        #{promotionid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.haut.promotion.domain.SuitPromotion">
+    <!--@mbg.generated-->
+    update suit_promotion
+    <set>
+      <if test="suiname != null">
+        suiname = #{suiname,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsids != null">
+        goodsids = #{goodsids,jdbcType=VARCHAR},
+      </if>
+      <if test="suitprice != null">
+        suitprice = #{suitprice,jdbcType=DECIMAL},
+      </if>
+      <if test="promotionid != null">
+        promotionid = #{promotionid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.haut.promotion.domain.SuitPromotion">
+    <!--@mbg.generated-->
+    update suit_promotion
+    set suiname = #{suiname,jdbcType=VARCHAR},
+      goodsids = #{goodsids,jdbcType=VARCHAR},
+      suitprice = #{suitprice,jdbcType=DECIMAL},
+      promotionid = #{promotionid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
