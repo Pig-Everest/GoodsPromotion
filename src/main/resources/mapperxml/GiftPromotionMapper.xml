@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haut.promotion.mapper.GiftPromotionMapper">
+  <resultMap id="showGiftPromotionMessagesMap" type="com.haut.promotion.domain.GiftPromotion">
+    <!--@mbg.generated generated on Wed Aug 28 09:20:21 CST 2019.-->
+    <id column="aid" jdbcType="INTEGER" property="id" />
+    <result column="agiftids" jdbcType="VARCHAR" property="giftids" />
+    <result column="apromotionid" jdbcType="INTEGER" property="promotionid" />
+
+    <association property="timemanager" javaType="com.haut.promotion.domain.Timemanager">
+      <!--@mbg.generated generated on Wed Aug 28 09:22:56 CST 2019.-->
+      <result column="starttime" jdbcType="VARCHAR" property="starttime" />
+      <result column="endtime" jdbcType="VARCHAR" property="endtime" />
+      <result column="dpromotionid" jdbcType="INTEGER" property="promotionid" />
+      <result column="dgiftid" jdbcType="INTEGER" property="giftid" />
+    </association>
+
+  <association property="promotion" javaType="com.haut.promotion.domain.Promotion" >
+    <id column="bid" jdbcType="INTEGER" property="id" />
+    <result column="bpromotionname" jdbcType="VARCHAR" property="promotionname" />
+    <result column="bpromotionplatfrom" jdbcType="VARCHAR" property="promotionplatfrom" />
+    <result column="bpromotionchannels" jdbcType="VARCHAR" property="promotionchannels" />
+    <result column="bpromotionuserscope" jdbcType="VARCHAR" property="promotionuserscope" />
+    <result column="bpromotionlinks" jdbcType="VARCHAR" property="promotionlinks" />
+    <result column="blimitednumber" jdbcType="VARCHAR" property="limitednumber" />
+    <result column="bpromotionstate" jdbcType="INTEGER" property="promotionstate" />
+
+    <association property="promotionStyle" javaType="com.haut.promotion.domain.Promotionstyle" >
+      <!--@mbg.generated generated on Wed Aug 28 09:22:23 CST 2019.-->
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="stylename" jdbcType="VARCHAR" property="stylename" />
+        <result column="promotionId" jdbcType="INTEGER" property="promotionid" />
+    </association>
+
+  </association>
+
+  </resultMap>
+
+<select id="showGiftPromotionMessage" resultMap="showGiftPromotionMessagesMap">
+  select a.id aid,a.giftids agiftids, a.promotionid apromotionid,
+         b.id bid,
+         b.promotionname bpromotionname,
+         b.promotionplatfrom bpromotionplatfrom,
+         b.promotionchannels bpromotionchannels,
+         b.promotionuserscope bpromotionuserscope,
+         b.limitednumber blimitednumber,
+         b.promotionstate bpromotionstate,
+         c.id cid,c.promotionId cpromotionId,c.stylename cstylename,
+         d.starttime ,d.endtime,d.giftid dgiftid,d.promotionid dpromotionid,
+         e.id eid,e.name
+  from
+    gift_promotion a
+      inner join
+      promotion b
+      inner join
+      promotionStyle c
+      inner join
+      timeManager  d
+      INNER JOIN
+      promotionstate e
+      on
+          a.promotionid=b.id
+          and
+          b.id=c.promotionId
+          and
+          a.id=d.giftId
+          and
+          a.promotionid=d.promotionid=1
+          and e.id=b.promotionstate
+</select>
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haut.promotion.mapper.PromotionstyleMapper">
+  <resultMap id="BaseResultMap" type="com.haut.promotion.domain.Promotionstyle">
+    <!--@mbg.generated generated on Wed Aug 28 09:22:23 CST 2019.-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="stylename" jdbcType="VARCHAR" property="stylename" />
+    <result column="promotionId" jdbcType="INTEGER" property="promotionid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Wed Aug 28 09:22:23 CST 2019.-->
+    id, stylename, promotionId
+  </sql>
+</mapper>

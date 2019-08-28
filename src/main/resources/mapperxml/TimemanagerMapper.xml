@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haut.promotion.mapper.TimemanagerMapper">
+  <resultMap id="BaseResultMap" type="com.haut.promotion.domain.Timemanager">
+    <!--@mbg.generated generated on Wed Aug 28 09:22:56 CST 2019.-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="starttime" jdbcType="VARCHAR" property="starttime" />
+    <result column="endtime" jdbcType="VARCHAR" property="endtime" />
+    <result column="promotionid" jdbcType="INTEGER" property="promotionid" />
+    <result column="fullid" jdbcType="INTEGER" property="fullid" />
+    <result column="singleid" jdbcType="INTEGER" property="singleid" />
+    <result column="suitid" jdbcType="INTEGER" property="suitid" />
+    <result column="giftid" jdbcType="INTEGER" property="giftid" />
+    <result column="fullgiftid" jdbcType="INTEGER" property="fullgiftid" />
+    <result column="buymoreid" jdbcType="INTEGER" property="buymoreid" />
+    <result column="frontid" jdbcType="INTEGER" property="frontid" />
+    <result column="useid" jdbcType="INTEGER" property="useid" />
+    <result column="groupid" jdbcType="INTEGER" property="groupid" />
+    <result column="getcouponid" jdbcType="INTEGER" property="getcouponid" />
+    <result column="usecouponid" jdbcType="INTEGER" property="usecouponid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Wed Aug 28 09:22:56 CST 2019.-->
+    id, starttime, endtime, promotionid, fullid, singleid, suitid, giftid, fullgiftid, 
+    buymoreid, frontid, useid, groupid, getcouponid, usecouponid
+  </sql>
+</mapper>
