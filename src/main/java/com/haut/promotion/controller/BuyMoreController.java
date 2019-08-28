@@ -1,6 +1,8 @@
 package com.haut.promotion.controller;
 
+import com.haut.promotion.domain.BuymorePromotion;
 import com.haut.promotion.domain.Promotion;
+import com.haut.promotion.domain.Timemanager;
 import com.haut.promotion.service.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,10 +23,30 @@ public class BuyMoreController {
     PromotionstyleService promotionstyleService;
     @Resource
     TimemanagerService timemanagerService;
+    @Resource
+    BuymorePromotionService buymorePromotionService;
 
-    @RequestMapping(value="/insertBuyMore")
-    public String insertBuyMore(Promotion promotion){
-        System.out.println(promotion.getPromotionchannels()+promotion.getPromotionplatfrom());
+    /**
+     * 提交多买促销活动
+     *
+     * @param promotion
+     * @return
+     */
+    @RequestMapping(value = "/insertBuyMore")
+    public String insertBuyMore(Promotion promotion, BuymorePromotion buymorePromotion, Timemanager timemanager, int require1[], int discount1[]) {
+        promotion.setPromotionstate(1);
+        promotion.setPromotionstyle(7);
+        Integer proid = promotionService.insertBuyMorePromotion(promotion);
+        buymorePromotion.setPromotionid(proid);
+
+        for (int i = 0; i < require1.length; i++) {
+            buymorePromotion.setRequire(require1[i]);
+            buymorePromotion.setDiscount(discount1[i]);
+            buymorePromotion.setId(null);
+            buymorePromotionService.insertBuyMore(buymorePromotion);
+        }
+        timemanager.setPromotionid(proid);
+        timemanagerService.insertTimeManager(timemanager);
         return "ok";
     }
 }

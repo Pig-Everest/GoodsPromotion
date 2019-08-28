@@ -31,7 +31,8 @@ public class PromotionServiceImpl implements PromotionService {
      */
     @Override
     public Integer insertBuyMorePromotion(Promotion promotion) {
-        return promotionMapper.insert(promotion);
+        promotionMapper.insertSelective(promotion);
+        return promotion.getId();
     }
 }
 

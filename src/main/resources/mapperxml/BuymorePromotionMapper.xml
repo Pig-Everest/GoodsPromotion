@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.haut.promotion.mapper.BuymorePromotionMapper">
   <resultMap id="BaseResultMap" type="com.haut.promotion.domain.BuymorePromotion">
-    <!--@mbg.generated generated on Wed Aug 28 17:19:22 CST 2019.-->
+    <!--@mbg.generated generated on Wed Aug 28 18:35:22 CST 2019.-->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="goodsid" jdbcType="INTEGER" property="goodsid" />
     <result column="type" jdbcType="INTEGER" property="type" />
@@ -11,7 +11,7 @@
     <result column="promotionid" jdbcType="INTEGER" property="promotionid" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!--@mbg.generated generated on Wed Aug 28 17:19:22 CST 2019.-->
+    <!--@mbg.generated generated on Wed Aug 28 18:35:22 CST 2019.-->
     id, goodsid, `type`, `require`, discount, promotionid
   </sql>
 </mapper>

@@ -27,5 +27,15 @@ public class TimemanagerServiceImpl implements TimemanagerService {
         timemanager.setGetcouponid(couponId);
         timemanagerMapper.insertSelective(timemanager);
     }
+    /**
+     * 添加时间管理表，和上面不同的是参数是对象，返回主键id值
+     * @param timemanager
+     * @return
+     */
+    @Override
+    public Integer insertTimeManager(Timemanager timemanager) {
+        timemanagerMapper.insertSelective(timemanager);
+        return timemanager.getId();
+    }
 }
 
