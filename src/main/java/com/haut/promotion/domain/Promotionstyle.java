@@ -1,3 +1,5 @@
+
+
 package com.haut.promotion.domain;
 
 import javax.persistence.*;
