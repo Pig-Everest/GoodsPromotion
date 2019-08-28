@@ -12,7 +12,7 @@
         <p><strong>多买促销</strong></p>
         <p>促销规则</p>
     </div>
-    <form style="background: #ebebeb;color: black">
+    <form style="background: #ebebeb;color: black" action="/Test" method="post">
         <div class="container">
             *推广范围:<input type="radio" name="1">全平台同使用<input type="radio" name="1">限平台使用<br><br>
             *推广平台:<input type="checkbox" name="2">主站专享<input type="checkbox" name="2">手机专享<br><br>
@@ -29,16 +29,23 @@
                 推广链接:<input type="text" name=""><br><br>
                 活动备注:<input type="text" style="height:40px;width: 200px">
             </div>
-            <div style="float: right;margin-right: 600px">
-                *活动时间:<input type="text" name="">&nbsp;&nbsp;至&nbsp;&nbsp;<input type="text" name=""><br><br>
+            <div style="float: right;margin-right: 450px">
+                *活动时间:<input type="datetime-local" name="starttime">&nbsp;&nbsp;至&nbsp;&nbsp;<input
+                    type="datetime-local" name="endtime"><br><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;满&nbsp;&nbsp;<input
-                    type="text" style="width: 50px">&nbsp;&nbsp;元(件)&nbsp;&nbsp;<input type="text" style="width: 50px">&nbsp;&nbsp;件(折)<br>
-                *活动规则:满&nbsp;&nbsp;<input type="text" style="width: 50px">&nbsp;&nbsp;元(件)&nbsp;&nbsp;<input type="text"
-                                                                                                             style="width: 50px">&nbsp;&nbsp;件件(折)<br>
+                    name="require"
+                    type="text" style="width: 50px">&nbsp;&nbsp;元(件)&nbsp;&nbsp;<input name="discount" type="text"
+                                                                                       style="width: 50px">&nbsp;&nbsp;件(折)<br>
+                *活动规则:满&nbsp;&nbsp;<input name="require" type="text"
+                                          style="width: 50px">&nbsp;&nbsp;元(件)&nbsp;&nbsp;<input name="discount"
+                                                                                                 type="text"
+                                                                                                 style="width: 50px">&nbsp;&nbsp;件件(折)<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;满&nbsp;&nbsp;<input
-                    type="text" style="width: 50px">&nbsp;&nbsp;元(件)&nbsp;&nbsp;<input type="text" style="width: 50px">&nbsp;&nbsp;件件(折)<br><br>
+                    name="require"
+                    type="text" style="width: 50px">&nbsp;&nbsp;元(件)&nbsp;&nbsp;<input name="discount" type="text"
+                                                                                       style="width: 50px">&nbsp;&nbsp;件件(折)<br><br>
                 参与方式:<input type="radio" name="">全场参加<input type="radio" name="">部分商品参加<input type="radio" name="">部分商品不参加<br><br>
-                <button  style="width: 80px;height: 50px"  class="btn">下一步</button>
+                <button style="width: 80px;height: 50px" class="btn">下一步</button>
             </div>
         </div>
     </form>

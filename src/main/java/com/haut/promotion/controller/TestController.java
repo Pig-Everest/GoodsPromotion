@@ -6,6 +6,7 @@ import com.haut.promotion.service.TestService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -27,6 +28,17 @@ public class TestController {
     @GetMapping(value = "testRedis")
     public MyResponseEntity testRedis(String key,String value){
         return new MyResponseEntity(HttpStatus.OK,"testRedis",testService.testRedis(key,value));
+    }
+
+    @PostMapping(value="/Test")
+    public String Test(String require[],String discount[]){
+        for (String s : require) {
+            System.out.println("require:"+s);
+        }
+        for (String s : discount) {
+            System.out.println("discount:"+s);
+        }
+        return "ok";
     }
 }
 
