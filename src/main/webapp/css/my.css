@@ -1,0 +1,6 @@
+.bordera{
+    border: 1px cadetblue solid;
+}
+ul { list-style:none; }
+
+body,ul,li,p,form,dl,dt,dd,input { margin:0; padding:0; }
