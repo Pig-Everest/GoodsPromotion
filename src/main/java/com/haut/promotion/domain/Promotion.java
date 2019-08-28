@@ -52,6 +52,13 @@ public class Promotion {
     private Integer promotionstate;
 
     /**
+     * 促销描述
+     */
+    @Column(name = "promotiondescripe")
+    private Integer promotiondescripe;
+
+
+    /**
      * 外键->促销类型表 promotionStyle
      */
     @Column(name = "promotionStyle")
@@ -213,5 +220,13 @@ public class Promotion {
      */
     public void setPromotionstyle(Integer promotionstyle) {
         this.promotionstyle = promotionstyle;
+    }
+
+    public Integer getPromotiondescripe() {
+        return promotiondescripe;
+    }
+
+    public void setPromotiondescripe(Integer promotiondescripe) {
+        this.promotiondescripe = promotiondescripe;
     }
 }
