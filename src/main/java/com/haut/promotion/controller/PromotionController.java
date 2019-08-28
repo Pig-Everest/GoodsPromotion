@@ -22,4 +22,5 @@ public class PromotionController {
       return promotionstyleService.selectAllPromotionStyle();
     }
 
+
 }

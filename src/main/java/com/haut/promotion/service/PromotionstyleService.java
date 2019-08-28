@@ -1,10 +1,12 @@
+
+
 package com.haut.promotion.service;
 
 import com.haut.promotion.domain.Promotionstyle;
 
 import java.util.List;
 
-public interface PromotionstyleService{
+public interface PromotionstyleService {
 
 
     int deleteByPrimaryKey(Integer id);
@@ -19,9 +21,21 @@ public interface PromotionstyleService{
 
     int updateByPrimaryKey(Promotionstyle record);
 
-    /*
-    * 查询所有促销类型
-    * */
-     public List<Promotionstyle> selectAllPromotionStyle();
+    /**
+     * 查询所有促销类型
+     **/
+    public List<Promotionstyle> selectAllPromotionStyle();
 
+    /**
+     * (生成优惠券)第二部添加促销类型表
+     *
+     * @param promotionId
+     */
+    void insertPromotionStyle(Integer promotionId);
 }
+
+
+
+
+
+
