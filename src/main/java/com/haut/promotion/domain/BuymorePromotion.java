@@ -1,5 +1,7 @@
 package com.haut.promotion.domain;
 
+import org.springframework.data.annotation.Persistent;
+
 import javax.persistence.*;
 
 @Table(name = "buymore_promotion")
@@ -36,12 +38,21 @@ public class BuymorePromotion {
     @Column(name = "discount")
     private Integer discount;
 
+    public Timemanager getTimemanager() {
+        return timemanager;
+    }
+
+    public void setTimemanager(Timemanager timemanager) {
+        this.timemanager = timemanager;
+    }
+
     /**
      * 促销编码 外键->促销表
      */
     @Column(name = "promotionid")
     private Integer promotionid;
-
+    @Transient
+    private Timemanager timemanager;
     /**
      * 获取主键 多买优惠主键
      *
