@@ -14,4 +14,5 @@
     <!--@mbg.generated generated on Wed Aug 28 18:35:22 CST 2019.-->
     id, goodsid, `type`, `require`, discount, promotionid
   </sql>
+
 </mapper>

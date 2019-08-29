@@ -1,94 +1,91 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>挑选商品</title>
-		 <meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
+    <title>挑选商品</title>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-	</head>
-	<body>
-		
-	<div class="container">
-<div class="row">	
-&emsp;
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        &emsp;
+    </div>
+
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <form class="form-inline" action="" method="get">
+                <div class="form-group">
+                    <label for="goodsId">商品编码</label>
+                    <input type="text" class="form-control" id="goodsId" placeholder="id">
+                </div>
+                &emsp;&emsp;<div class="form-group">
+                <label for="skuId">sku编码</label>
+                <input type="text" class="form-control" id="skuId" placeholder="typeid">
+            </div>
+                &emsp;&emsp;<div class="form-group">
+                <label for="goodsName">商品名称</label>
+                <input type="text" class="form-control" id="goodsName" placeholder="name">
+                <button type="submit" class="btn btn-default">查询</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row">&emsp;</div>
+    <div class="row">&emsp;</div>
+    <div class="row">
+        <div class="col-md-2">
+            <h4 style="color:#CC3300;">选择参加活动的商品</h4>
+        </div>
+    </div>
+    <div class="row">
+
+        <table class="table table-hover">
+            <tr>
+                <th><input type="checkbox" name="goodsId"></th>
+                <th>商品编码</th>
+                <th>sku编码</th>
+                <th>商品名称</th>
+                <th>京东价</th>
+                <th>优惠内容</th>
+                <th>操作</th>
+            </tr>
+            <div class="row">
+                <tr>
+                    <td><input type="checkbox" name="goodsId"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+            </div>
+
+        </table>
+    </div>
+    <div class="row">
+
+        <div class="col-md-2">
+            共条记录&emsp;共页
+        </div>
+    </div>
+
 </div>
-  			
-  	<div class="row">		
-  		<div class="col-md-1">
-  			</div>
-  		<div class="col-md-10" >
-  		<form class="form-inline" action="" method="get">
-  			<div class="form-group">
-   		 		<label for="exampleInputName2">商品编码</label>
-    			<input type="text" class="form-control" id="goodsId" placeholder="id">
-  			</div>
-  			&emsp;&emsp;<div class="form-group">
-   				<label for="exampleInputEmail2">sku编码</label>
-    			<input type="text" class="form-control" id="skuId" placeholder="typeid">
-  			</div>
-  			&emsp;&emsp;<div class="form-group">
-   				<label for="exampleInputEmail2">商品名称</label>
-    			<input type="text" class="form-control" id="goodsName" placeholder="name">
-    				<button type="submit" class="btn btn-default">查询</button>
-  			</div>
-  			</form>		
-  			</div>
-  			</div>
-  			
-		
-	<div class="row">&emsp;</div>	
-	<div class="row">&emsp;</div>	
-  	<div class="row">
-  		<div class="col-md-2">
-  			<h4 style="color:#CC3300;">选择参加活动的商品</h4>
-  			</div>
-		</div>
-  	<div class="row">	
-  		
-  		<table class="table table-hover">
- 		<tr>
- 			<th><input type="checkbox" name="goodsId"></th>
- 			<th>商品编码</th>
- 			<th>sku编码</th>
- 			<th>商品名称</th>
- 			<th>京东价</th>
- 			<th>优惠内容</th>
- 			<th>操作</th>
- 		</tr>
-		
-  			</div>
-  	<div class="row">	
-  		<tr>
-  			<td><input type="checkbox" name="goodsId"></td>
-  			<td></td>
-  			<td></td>
-  			<td></td>
-  			<td></td>
-  			<td></td>
-  			<td></td>
-  			
-  		</tr>	
-	</div>
-  		
-  		</table>
-  		<div class="row">
-  			
-  			<div class="col-md-2">
-  				共条记录&emsp;共页
-  			</div>
-  		</div>
-  		
-	</div>
-		
-		
-		
-		
-	<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-	</body>
+
+
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
 </html>

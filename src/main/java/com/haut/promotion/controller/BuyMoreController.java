@@ -34,7 +34,6 @@ public class BuyMoreController {
      */
     @RequestMapping(value = "/insertBuyMore")
     public String insertBuyMore(Promotion promotion, BuymorePromotion buymorePromotion, Timemanager timemanager, int require1[], int discount1[]) {
-        promotion.setPromotionstate(1);
         promotion.setPromotionstyle(7);
         Integer proid = promotionService.insertBuyMorePromotion(promotion);
         buymorePromotion.setPromotionid(proid);

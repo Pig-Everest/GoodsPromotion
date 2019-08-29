@@ -2,12 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <script type="text/javascript" src="/js/jquery-3.1.0.min.js"></script>
-    <script type="text/javascript" src="/css/bootstrap.css"></script>
+    <link type="text/css" rel="stylesheet" href="/css/patch.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap-theme.css"/>
+    <link type="text/css" href="/css/docs.min.css" rel="stylesheet"/>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <p><strong>多买促销</strong></p>
         <p>促销规则</p>
@@ -33,10 +36,10 @@
                 推广链接:<input type="text" name="promotionlinks"><br><br>
                 活动备注:<input type="text" style="height:40px;width: 200px">
             </div>
-            <div style="float: right;margin-right: 450px">
+            <div style="float: right;margin-right: 300px">
                 *活动时间:<input type="datetime-local" name="starttime">&nbsp;&nbsp;至&nbsp;&nbsp;<input
                     type="datetime-local" name="endtime"><br><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;满&nbsp;&nbsp;<input
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;满&nbsp;&nbsp;<input
                     name="require1"
                     type="text" style="width: 50px">&nbsp;&nbsp;元(件)&nbsp;&nbsp;<input name="discount1" type="text"
                                                                                        style="width: 50px">&nbsp;&nbsp;件(折)<br>
@@ -44,7 +47,7 @@
                                           style="width: 50px">&nbsp;&nbsp;元(件)&nbsp;&nbsp;<input name="discount1"
                                                                                                  type="text"
                                                                                                  style="width: 50px">&nbsp;&nbsp;件件(折)<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;满&nbsp;&nbsp;<input
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;满&nbsp;&nbsp;<input
                     name="require1"
                     type="text" style="width: 50px">&nbsp;&nbsp;元(件)&nbsp;&nbsp;<input name="discount1" type="text"
                                                                                        style="width: 50px">&nbsp;&nbsp;件件(折)<br><br>

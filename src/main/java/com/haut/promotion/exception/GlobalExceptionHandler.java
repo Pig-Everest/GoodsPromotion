@@ -19,7 +19,8 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     /**
-     *捕获Exception异常
+     * 捕获Exception异常
+     *
      * @param request
      * @param e
      * @return map
@@ -28,23 +29,23 @@ public class GlobalExceptionHandler {
     public Map<String, Object> runtimeExceptionHandler(
             HttpServletRequest request,
             final Exception e
-    ){
-        Map<String,Object> map = new HashMap<>();
+    ) {
+        Map<String, Object> map = new HashMap<>();
         //返回错误页面
         StringBuilder stringBuilder = new StringBuilder();
-        if(e instanceof CustomException){
+        if (e instanceof CustomException) {
             CustomException customException = (CustomException) e;
             //设置错误代码
-            stringBuilder.append("/errorManager?code="+customException.getCode());
-        }else {
+            stringBuilder.append("/errorManager?code=" + customException.getCode());
+        } else {
             stringBuilder.append("/errorManager?code=400");
 
         }
         //设置错误消息
-        stringBuilder.append("&message="+e.getMessage());
+        stringBuilder.append("&message=" + e.getMessage());
         String url = stringBuilder.toString();
-        map.put("flag",true);
-        map.put("url",url);
+        map.put("flag", true);
+        map.put("url", url);
         return map;
     }
 
