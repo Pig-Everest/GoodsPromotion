@@ -8,9 +8,10 @@ public interface TimemanagerService {
      *
      * @param startTime 优惠券领取开始时间
      * @param endTime   优惠券领取结束时间
+     * @param promotionId  促销id
      * @param couponId  优惠券id
      */
-    void insertTimeManager(String startTime, String endTime, Integer couponId);
+    void insertTimeManager(String startTime, String endTime,Integer promotionId, Integer couponId);
 
     /**
      * 添加时间管理表，和上面不同的是参数是对象，返回主键id值

@@ -20,10 +20,11 @@ public class TimemanagerServiceImpl implements TimemanagerService {
      * @param couponId  优惠券id
      */
     @Override
-    public void insertTimeManager(String startTime, String endTime, Integer couponId) {
+    public void insertTimeManager(String startTime, String endTime,Integer promotionId, Integer couponId) {
         Timemanager timemanager = new Timemanager();
         timemanager.setStarttime(startTime);
         timemanager.setEndtime(endTime);
+        timemanager.setPromotionid(promotionId);
         timemanager.setGetcouponid(couponId);
         timemanagerMapper.insertSelective(timemanager);
     }

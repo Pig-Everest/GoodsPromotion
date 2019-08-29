@@ -38,7 +38,7 @@ public class CouponController {
         Integer promotionId = promotionService.insertPromotion(promotion);
         coupon.setPromotionid(promotionId);
         Integer couponId = couponService.insertCoupon(coupon);
-        timemanagerService.insertTimeManager(time1,time2,couponId);
+        timemanagerService.insertTimeManager(time1,time2,promotionId,couponId);
         return  new MyResponseEntity(HttpStatus.OK,"success",promotionId);
     }
 }
