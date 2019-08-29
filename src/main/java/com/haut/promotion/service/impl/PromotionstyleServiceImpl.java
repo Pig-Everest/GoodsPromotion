@@ -53,4 +53,6 @@ public class PromotionstyleServiceImpl implements PromotionstyleService {
     public List<Promotionstyle> selectAllPromotionStyle() {
         return promotionstyleMapper.selectAll();
     }
+
 }
+

@@ -19,12 +19,6 @@ public class Promotionstyle {
     private String stylename;
 
     /**
-     * 外键->促销表.id
-     */
-    @Column(name = "promotionId")
-    private Integer promotionid;
-
-    /**
      * 获取主键
      *
      * @return id - 主键
@@ -58,23 +52,5 @@ public class Promotionstyle {
      */
     public void setStylename(String stylename) {
         this.stylename = stylename;
-    }
-
-    /**
-     * 获取外键->促销表.id
-     *
-     * @return promotionId - 外键->促销表.id
-     */
-    public Integer getPromotionid() {
-        return promotionid;
-    }
-
-    /**
-     * 设置外键->促销表.id
-     *
-     * @param promotionid 外键->促销表.id
-     */
-    public void setPromotionid(Integer promotionid) {
-        this.promotionid = promotionid;
     }
 }

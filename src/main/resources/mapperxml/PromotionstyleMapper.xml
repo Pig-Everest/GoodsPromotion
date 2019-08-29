@@ -2,13 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.haut.promotion.mapper.PromotionstyleMapper">
   <resultMap id="BaseResultMap" type="com.haut.promotion.domain.Promotionstyle">
-    <!--@mbg.generated generated on Thu Aug 29 08:14:20 CST 2019.-->
+    <!--@mbg.generated generated on Thu Aug 29 15:53:13 CST 2019.-->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="stylename" jdbcType="VARCHAR" property="stylename" />
-    <result column="promotionId" jdbcType="INTEGER" property="promotionid" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!--@mbg.generated generated on Thu Aug 29 08:14:20 CST 2019.-->
-    id, stylename, promotionId
+    <!--@mbg.generated generated on Thu Aug 29 15:53:13 CST 2019.-->
+    id, stylename
   </sql>
 </mapper>

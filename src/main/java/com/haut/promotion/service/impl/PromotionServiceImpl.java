@@ -50,7 +50,6 @@ public class PromotionServiceImpl implements PromotionService {
         map.put("promotionchannels", promotion.getPromotionchannels());
         map.put("promotionuserscope", promotion.getPromotionuserscope());
         map.put("promotionlinks", promotion.getPromotionlinks());
-        map.put("limitednumber", promotion.getLimitednumber());
         map.put("promotionstate", promotion.getPromotionstate());
         map.put("promotionStyle", promotion.getPromotionstyle());
         map.put("promotiondescripe", promotion.getPromotiondescripe());
