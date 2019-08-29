@@ -2,6 +2,7 @@ package com.haut.promotion.service;
 
 import com.haut.promotion.domain.BuymorePromotion;
 
+import java.util.List;
 import java.util.Map;
 
 public interface BuymorePromotionService {
@@ -18,5 +19,19 @@ public interface BuymorePromotionService {
   * @return
   */
  public Map<String,Object> selectBuyMore(Map<String,Object> map);
+
+ /**
+  * 通过promotionId查询buyMore表
+  * @param promotionId
+  * @return
+  */
+ public List<BuymorePromotion> selecttByPromotionId(int promotionId);
+
+ /**
+  * 通过promotionId连buymore表和timemanager表查询
+  * @param id
+  * @return
+  */
+ List<BuymorePromotion> selectBuymoreAndTime(int id);
 }
 

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 public class BuyMoreController {
@@ -47,5 +48,10 @@ public class BuyMoreController {
         timemanager.setPromotionid(proid);
         timemanagerService.insertTimeManager(timemanager);
         return "ok";
+    }
+
+    @RequestMapping("/Testn")
+    public List<BuymorePromotion> Testn() {
+        return buymorePromotionService.selectBuymoreAndTime(18);
     }
 }
