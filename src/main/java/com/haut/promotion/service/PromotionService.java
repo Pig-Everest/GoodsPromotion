@@ -14,11 +14,21 @@ public interface PromotionService {
     Integer insertPromotion(Promotion promotion);
 
     /**
+     * 添加多买促销表
+     * @param promotion
+     * @return
+     */
+    Integer insertBuyMorePromotion(Promotion promotion);
+    /*
+
+    * 添加促销，返回主键*/
+    Integer isertPromotion(Promotion promotion);
+
+    /**
      * 通过促销id查询促销表信息
      * @param promotionId 促销id
      * @return 促销表
      */
-    Map<String,Object> selectPromotionById(Integer promotionId);
-}
+    Map<String,Object> selectPromotionById(Integer promotionId);}
 
 
