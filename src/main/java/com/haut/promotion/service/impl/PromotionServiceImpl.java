@@ -43,21 +43,23 @@ public class PromotionServiceImpl implements PromotionService {
     @Override
     public Map<String, Object> selectPromotionById(Integer promotionId) {
         Promotion promotion = promotionMapper.selectByPrimaryKey(promotionId);
-        Map<String,Object> map = new HashMap<>();
-        map.put("id",promotion.getId());
-        map.put("promotionname",promotion.getPromotionname());
-        map.put("promotionplatfrom",promotion.getPromotionplatfrom());
-        map.put("promotionchannels",promotion.getPromotionchannels());
-        map.put("promotionuserscope",promotion.getPromotionuserscope());
-        map.put("promotionlinks",promotion.getPromotionlinks());
-        map.put("limitednumber",promotion.getLimitednumber());
-        map.put("promotionstate",promotion.getPromotionstate());
-        map.put("promotionStyle",promotion.getPromotionstyle());
-        map.put("promotiondescripe",promotion.getPromotiondescripe());
+        Map<String, Object> map = new HashMap<>();
+        map.put("id", promotion.getId());
+        map.put("promotionname", promotion.getPromotionname());
+        map.put("promotionplatfrom", promotion.getPromotionplatfrom());
+        map.put("promotionchannels", promotion.getPromotionchannels());
+        map.put("promotionuserscope", promotion.getPromotionuserscope());
+        map.put("promotionlinks", promotion.getPromotionlinks());
+        map.put("limitednumber", promotion.getLimitednumber());
+        map.put("promotionstate", promotion.getPromotionstate());
+        map.put("promotionStyle", promotion.getPromotionstyle());
+        map.put("promotiondescripe", promotion.getPromotiondescripe());
         return map;
     }
+
     /**
      * 添加多买促销表
+     *
      * @param promotion
      * @return
      */
@@ -67,10 +69,11 @@ public class PromotionServiceImpl implements PromotionService {
         return promotion.getId();
     }
 
-   public Integer isertPromotion(Promotion promotion){
-       promotionMapper.insertSelective(promotion);
-       return promotion.getId();
+    public Integer isertPromotion(Promotion promotion) {
+        promotionMapper.insertSelective(promotion);
+        return promotion.getId();
     }
 }
+
 
 
