@@ -11,4 +11,12 @@ public interface GoodsService{
      */
     void insertGoods(List<Goods> goodsList);
 
+    /**
+     * 通过三个id查询所关联的促销id
+     * @param sku_id 型号id
+     * @param spu_id 商品id
+     * @param id     店铺id
+     * @return  促销id
+     */
+    List<Integer> selectGoodsByIds(Integer sku_id, Integer spu_id, Integer id);
 }

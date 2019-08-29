@@ -2,6 +2,8 @@ package com.haut.promotion.service;
 
 import com.haut.promotion.domain.Promotion;
 
+import java.util.Map;
+
 public interface PromotionService {
     /**
      * 第一步添加促销表
@@ -11,5 +13,12 @@ public interface PromotionService {
      */
     Integer insertPromotion(Promotion promotion);
 
+    /**
+     * 通过促销id查询促销表信息
+     * @param promotionId 促销id
+     * @return 促销表
+     */
+    Map<String,Object> selectPromotionById(Integer promotionId);
 }
+
 

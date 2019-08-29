@@ -2,19 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.haut.promotion.mapper.PromotionMapper">
   <resultMap id="BaseResultMap" type="com.haut.promotion.domain.Promotion">
-    <!--@mbg.generated generated on Tue Aug 27 16:59:02 CST 2019.-->
+    <!--@mbg.generated generated on Thu Aug 29 08:13:40 CST 2019.-->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="promotionname" jdbcType="VARCHAR" property="promotionname" />
     <result column="promotionplatfrom" jdbcType="VARCHAR" property="promotionplatfrom" />
-    <result column="promotionchannels" jdbcType="INTEGER" property="promotionchannels" />
+    <result column="promotionchannels" jdbcType="VARCHAR" property="promotionchannels" />
     <result column="promotionuserscope" jdbcType="VARCHAR" property="promotionuserscope" />
     <result column="promotionlinks" jdbcType="VARCHAR" property="promotionlinks" />
-    <result column="limitednumber" jdbcType="INTEGER" property="limitednumber" />
+    <result column="limitednumber" jdbcType="VARCHAR" property="limitednumber" />
     <result column="promotionstate" jdbcType="INTEGER" property="promotionstate" />
+    <result column="promotionStyle" jdbcType="INTEGER" property="promotionstyle" />
+    <result column="promotiondescripe" jdbcType="VARCHAR" property="promotiondescripe" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!--@mbg.generated generated on Tue Aug 27 16:59:02 CST 2019.-->
+    <!--@mbg.generated generated on Thu Aug 29 08:13:40 CST 2019.-->
     id, promotionname, promotionplatfrom, promotionchannels, promotionuserscope, promotionlinks, 
-    limitednumber, promotionstate
+    limitednumber, promotionstate, promotionStyle, promotiondescripe
   </sql>
 </mapper>

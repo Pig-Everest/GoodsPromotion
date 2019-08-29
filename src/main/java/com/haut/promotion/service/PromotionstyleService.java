@@ -25,14 +25,8 @@ public interface PromotionstyleService {
      * 查询所有促销类型
      **/
     public List<Promotionstyle> selectAllPromotionStyle();
-
-    /**
-     * (生成优惠券)第二部添加促销类型表
-     *
-     * @param promotionId
-     */
-    void insertPromotionStyle(Integer promotionId);
 }
+
 
 
 

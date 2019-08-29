@@ -1,9 +1,3 @@
-
-
-
-
-
-
 package com.haut.promotion.mapper;
 
 import com.haut.promotion.domain.Promotionstyle;

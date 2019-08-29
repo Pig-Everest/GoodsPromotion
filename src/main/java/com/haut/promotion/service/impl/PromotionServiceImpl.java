@@ -6,6 +6,9 @@ import javax.annotation.Resource;
 import com.haut.promotion.mapper.PromotionMapper;
 import com.haut.promotion.service.PromotionService;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Service
 public class PromotionServiceImpl implements PromotionService {
 
@@ -20,8 +23,38 @@ public class PromotionServiceImpl implements PromotionService {
      */
     @Override
     public Integer insertPromotion(Promotion promotion) {
+        promotion.setPromotionchannels("全渠道");
+        promotion.setPromotionuserscope("普通用户");
+        promotion.setPromotionlinks("待添加");
+        promotion.setPromotionstyle(9);
+        promotion.setPromotionstate(0);
+        promotion.setPromotiondescripe("NVLL");
         promotionMapper.insertSelective(promotion);
-        return promotionMapper.selectOne(promotion).getId();
+        return promotion.getId();
+    }
+
+    /**
+     * 通过促销id查询促销表信息
+     *
+     * @param promotionId 促销id
+     * @return 促销表
+     */
+    @Override
+    public Map<String, Object> selectPromotionById(Integer promotionId) {
+        Promotion promotion = promotionMapper.selectByPrimaryKey(promotionId);
+        Map<String,Object> map = new HashMap<>();
+        map.put("id",promotion.getId());
+        map.put("promotionname",promotion.getPromotionname());
+        map.put("promotionplatfrom",promotion.getPromotionplatfrom());
+        map.put("promotionchannels",promotion.getPromotionchannels());
+        map.put("promotionuserscope",promotion.getPromotionuserscope());
+        map.put("promotionlinks",promotion.getPromotionlinks());
+        map.put("limitednumber",promotion.getLimitednumber());
+        map.put("promotionstate",promotion.getPromotionstate());
+        map.put("promotionStyle",promotion.getPromotionstyle());
+        map.put("promotiondescripe",promotion.getPromotiondescripe());
+        return map;
     }
 }
+
 

@@ -10,7 +10,7 @@ public class Promotion {
     @Id
     @Column(name = "id")
     @GeneratedValue(generator = "JDBC")
-    private Integer promotionId;
+    private Integer id;
 
     /**
      * 促销名字
@@ -28,7 +28,7 @@ public class Promotion {
      * 促销渠道
      */
     @Column(name = "promotionchannels")
-    private Integer promotionchannels;
+    private String promotionchannels;
 
     /**
      * 促销用户范围
@@ -37,7 +37,7 @@ public class Promotion {
     private String promotionuserscope;
 
     /**
-     * 促销连接
+     * 促销链接
      */
     @Column(name = "promotionlinks")
     private String promotionlinks;
@@ -46,10 +46,19 @@ public class Promotion {
      * 限制数量
      */
     @Column(name = "limitednumber")
-    private Integer limitednumber;
+    private String limitednumber;
 
     @Column(name = "promotionstate")
     private Integer promotionstate;
+
+    /**
+     * 外键->促销类型表 promotionStyle
+     */
+    @Column(name = "promotionStyle")
+    private Integer promotionstyle;
+
+    @Column(name = "promotiondescripe")
+    private String promotiondescripe;
 
     /**
      * 获取主键
@@ -57,7 +66,7 @@ public class Promotion {
      * @return id - 主键
      */
     public Integer getId() {
-        return promotionId;
+        return id;
     }
 
     /**
@@ -66,7 +75,7 @@ public class Promotion {
      * @param id 主键
      */
     public void setId(Integer id) {
-        this.promotionId = id;
+        this.id = id;
     }
 
     /**
@@ -110,7 +119,7 @@ public class Promotion {
      *
      * @return promotionchannels - 促销渠道
      */
-    public Integer getPromotionchannels() {
+    public String getPromotionchannels() {
         return promotionchannels;
     }
 
@@ -119,7 +128,7 @@ public class Promotion {
      *
      * @param promotionchannels 促销渠道
      */
-    public void setPromotionchannels(Integer promotionchannels) {
+    public void setPromotionchannels(String promotionchannels) {
         this.promotionchannels = promotionchannels;
     }
 
@@ -142,18 +151,18 @@ public class Promotion {
     }
 
     /**
-     * 获取促销连接
+     * 获取促销链接
      *
-     * @return promotionlinks - 促销连接
+     * @return promotionlinks - 促销链接
      */
     public String getPromotionlinks() {
         return promotionlinks;
     }
 
     /**
-     * 设置促销连接
+     * 设置促销链接
      *
-     * @param promotionlinks 促销连接
+     * @param promotionlinks 促销链接
      */
     public void setPromotionlinks(String promotionlinks) {
         this.promotionlinks = promotionlinks;
@@ -164,7 +173,7 @@ public class Promotion {
      *
      * @return limitednumber - 限制数量
      */
-    public Integer getLimitednumber() {
+    public String getLimitednumber() {
         return limitednumber;
     }
 
@@ -173,7 +182,7 @@ public class Promotion {
      *
      * @param limitednumber 限制数量
      */
-    public void setLimitednumber(Integer limitednumber) {
+    public void setLimitednumber(String limitednumber) {
         this.limitednumber = limitednumber;
     }
 
@@ -189,5 +198,37 @@ public class Promotion {
      */
     public void setPromotionstate(Integer promotionstate) {
         this.promotionstate = promotionstate;
+    }
+
+    /**
+     * 获取外键->促销类型表 promotionStyle
+     *
+     * @return promotionStyle - 外键->促销类型表 promotionStyle
+     */
+    public Integer getPromotionstyle() {
+        return promotionstyle;
+    }
+
+    /**
+     * 设置外键->促销类型表 promotionStyle
+     *
+     * @param promotionstyle 外键->促销类型表 promotionStyle
+     */
+    public void setPromotionstyle(Integer promotionstyle) {
+        this.promotionstyle = promotionstyle;
+    }
+
+    /**
+     * @return promotiondescripe
+     */
+    public String getPromotiondescripe() {
+        return promotiondescripe;
+    }
+
+    /**
+     * @param promotiondescripe
+     */
+    public void setPromotiondescripe(String promotiondescripe) {
+        this.promotiondescripe = promotiondescripe;
     }
 }

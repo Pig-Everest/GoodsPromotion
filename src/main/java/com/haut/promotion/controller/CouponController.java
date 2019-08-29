@@ -32,12 +32,13 @@ public class CouponController {
      * @return
      */
     @PostMapping("createCoupon")
-    public MyResponseEntity createCoupon(Promotion promotion,Coupon coupon, List<Goods> goodsInfo,String startTime,String endTime){
+    public MyResponseEntity createCoupon(Promotion promotion,Coupon coupon,String startTime,String endTime){
+        String time1=startTime.substring(0,9)+" "+startTime.substring(10,11)+":"+startTime.substring(15,16);
+        String time2=endTime.substring(0,9)+" "+endTime.substring(10,11)+":"+endTime.substring(15,16);
         Integer promotionId = promotionService.insertPromotion(promotion);
-        promotionstyleService.insertPromotionStyle(promotionId);
-        goodsService.insertGoods(goodsInfo);
+        coupon.setPromotionid(promotionId);
         Integer couponId = couponService.insertCoupon(coupon);
-        timemanagerService.insertTimeManager(startTime,endTime,couponId);
-        return  new MyResponseEntity(HttpStatus.OK,"success","优惠券添加成功");
+        timemanagerService.insertTimeManager(time1,time2,couponId);
+        return  new MyResponseEntity(HttpStatus.OK,"success",promotionId);
     }
 }
