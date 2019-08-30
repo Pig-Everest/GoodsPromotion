@@ -55,7 +55,17 @@ public class PromotionServiceImpl implements PromotionService {
         map.put("promotiondescripe", promotion.getPromotiondescripe());
         return map;
     }
+    /**
+     * 通过促销信息组合查询查询促销表信息 封装成对象
+     *
+     * @param promotionId 促销id
+     * @return 促销信息
+     */
+     public Promotion  selectPromotion(Integer promotionId){
+        Promotion promotion = promotionMapper.selectByPrimaryKey(promotionId);
 
+        return promotion;
+    }
     /**
      * 添加多买促销表
      *
@@ -67,6 +77,13 @@ public class PromotionServiceImpl implements PromotionService {
         promotionMapper.insertSelective(promotion);
         return promotion.getId();
     }
+
+    /**
+     * 添加促销表
+     *
+     * @param promotion
+     * @return
+     */
 
     public Integer isertPromotion(Promotion promotion) {
         promotionMapper.insertSelective(promotion);

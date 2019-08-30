@@ -27,12 +27,21 @@ public interface PromotionService {
     Integer isertPromotion(Promotion promotion);
 
     /**
-     * 通过促销id查询促销表信息
+     * 通过促销id查询促销表信息 封装成map
      *
      * @param promotionId 促销id
      * @return 促销表
      */
     Map<String, Object> selectPromotionById(Integer promotionId);
+
+
+    /**
+     * 通过促销信息组合查询查询促销表信息 封装成对象
+     *
+     * @param promotionId 促销id
+     * @return 促销信息
+     */
+    Promotion  selectPromotion(Integer promotionId);
 }
 
 

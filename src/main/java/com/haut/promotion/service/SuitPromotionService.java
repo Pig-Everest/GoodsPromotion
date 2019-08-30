@@ -1,5 +1,6 @@
 package com.haut.promotion.service;
 
+import com.haut.promotion.domain.Promotion;
 import com.haut.promotion.domain.SuitPromotion;
 public interface SuitPromotionService{
 
@@ -17,5 +18,9 @@ public interface SuitPromotionService{
     int updateByPrimaryKey(SuitPromotion record);
 
     Integer insertSuitPromotion(SuitPromotion suitPromotion);
+    /*
+     * 通过促销信息查询具体的套装促销信息
+     * */
 
+    SuitPromotion  selectSuitPromotionByPromotion(Promotion promotion);
 }

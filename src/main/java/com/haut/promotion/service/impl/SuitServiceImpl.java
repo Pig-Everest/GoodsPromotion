@@ -1,10 +1,14 @@
-package com.haut.promotion.service;
+package com.haut.promotion.service.impl;
 
+import com.haut.promotion.domain.Promotion;
+import com.haut.promotion.domain.SuitPromotion;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.haut.promotion.mapper.SuitMapper;
 import com.haut.promotion.domain.Suit;
 import com.haut.promotion.service.SuitService;
+
+import java.util.List;
 
 @Service
 public class SuitServiceImpl implements SuitService {
@@ -41,6 +45,11 @@ public class SuitServiceImpl implements SuitService {
     public int updateByPrimaryKey(Suit record) {
         return suitMapper.updateByPrimaryKey(record);
     }
-
+    /*
+     * 通过套装查询此套装的所有商品id 并封装在Suit的集合中
+     * */
+   public     List<Suit> selectSuitsBySuit(Suit suit){
+        return  suitMapper.select(suit);
+    }
 }
 
