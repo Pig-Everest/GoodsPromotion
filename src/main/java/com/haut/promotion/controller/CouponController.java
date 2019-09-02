@@ -41,4 +41,8 @@ public class CouponController {
         timemanagerService.insertTimeManager(time1,time2,promotionId,couponId);
         return  new MyResponseEntity(HttpStatus.OK,"success",promotionId);
     }
+
+    /**
+     * 通过类型查询参与该类型的商品信息
+     */
 }
