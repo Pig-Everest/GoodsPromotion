@@ -1,6 +1,12 @@
 package com.haut.promotion.dto;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.haut.promotion.myproperties.UrlProperties;
+
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 作为规则页面的临时实体类
@@ -102,5 +108,10 @@ public class FrontPromotionDto {
         this.frontmoney = frontmoney;
         this.nowmoney = nowmoney;
         this.promotionlinks = promotionlinks;
+    }
+
+    public static void main(String[] args) throws Exception {
+
+
     }
 }
