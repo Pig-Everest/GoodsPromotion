@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import com.haut.promotion.service.PromotionService;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -66,6 +67,17 @@ public class PromotionServiceImpl implements PromotionService {
 
         return promotion;
     }
+
+    /**
+     * 通过promotionid来查询该订单的所有信息
+     * @param promotion
+     * @return
+     */
+    @Override
+    public List<Promotion> selectBuymorePromotion(Promotion promotion) {
+        return promotionMapper.selectBuymorePromotion(promotion);
+    }
+
     /**
      * 添加多买促销表
      *

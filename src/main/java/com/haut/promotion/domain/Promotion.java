@@ -1,6 +1,7 @@
 package com.haut.promotion.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Table(name = "promotion")
 public class Promotion {
@@ -54,6 +55,17 @@ public class Promotion {
     @Column(name = "promotiondescripe")
     private String promotiondescripe;
 
+
+    public List<BuymorePromotion> getBuymoreList() {
+        return buymoreList;
+    }
+
+    public void setBuymoreList(List<BuymorePromotion> buymoreList) {
+        this.buymoreList = buymoreList;
+    }
+
+    @Transient
+    private List<BuymorePromotion> buymoreList;
     /**
      * 获取主键
      *

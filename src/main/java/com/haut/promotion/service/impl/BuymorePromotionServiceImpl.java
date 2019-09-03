@@ -60,7 +60,11 @@ public class BuymorePromotionServiceImpl implements BuymorePromotionService {
         List<BuymorePromotion> list = buymorePromotionMapper.select(buymorePromotion);
         return list;
     }
-
+    /**
+     * 根据promotionid联表查询buymore表和timemanager表
+     * @param id
+     * @return
+     */
     @Override
     public List<BuymorePromotion> selectBuymoreAndTime(int id) {
         List<BuymorePromotion> list = buymorePromotionMapper.selectBuymoreAndTime(id);
