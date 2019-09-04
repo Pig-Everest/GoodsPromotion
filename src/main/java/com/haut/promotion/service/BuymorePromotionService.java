@@ -1,6 +1,8 @@
 package com.haut.promotion.service;
 
 import com.haut.promotion.domain.BuymorePromotion;
+import com.haut.promotion.domain.Promotion;
+import com.haut.promotion.domain.Timemanager;
 
 import java.util.List;
 import java.util.Map;
@@ -33,5 +35,13 @@ public interface BuymorePromotionService {
   * @return
   */
  List<BuymorePromotion> selectBuymoreAndTime(int id);
+
+ /**
+  * 根据传进来的promotionid修改三个表的内容
+  * @param promotion
+  * @param timemanager
+  * @param buymorePromotion
+  */
+ public void updateBuymore(Promotion promotion,Timemanager timemanager,BuymorePromotion buymorePromotion,int require1[], int discount1[]);
 }
 

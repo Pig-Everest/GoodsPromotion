@@ -1,21 +1,30 @@
 package com.haut.promotion.service.impl;
 
 import com.haut.promotion.domain.BuymorePromotion;
+import com.haut.promotion.domain.Promotion;
+import com.haut.promotion.domain.Timemanager;
+import com.haut.promotion.mapper.PromotionMapper;
+import com.haut.promotion.mapper.TimemanagerMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 import com.haut.promotion.mapper.BuymorePromotionMapper;
 import com.haut.promotion.service.BuymorePromotionService;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
-
+@Transactional// 设置事务
 @Service
 public class BuymorePromotionServiceImpl implements BuymorePromotionService {
 
     @Resource
     private BuymorePromotionMapper buymorePromotionMapper;
+    @Resource
+    private PromotionMapper promotionMapper;
+    @Resource
+    private TimemanagerMapper timemanagerMapper;
 
     /**
      * 提交多买促销
@@ -69,6 +78,39 @@ public class BuymorePromotionServiceImpl implements BuymorePromotionService {
     public List<BuymorePromotion> selectBuymoreAndTime(int id) {
         List<BuymorePromotion> list = buymorePromotionMapper.selectBuymoreAndTime(id);
         return list;
+    }
+
+    /**
+     * 通过promotionid同时修改三个表的数据
+     * @param promotion
+     * @param timemanager
+     * @param buymorePromotion
+     */
+    @Override
+    public void updateBuymore(Promotion promotion, Timemanager timemanager, BuymorePromotion buymorePromotion,int require1[], int discount1[]) {
+        BuymorePromotion buymorePromotion1=new BuymorePromotion();
+        buymorePromotion1.setPromotionid(promotion.getId());
+        Timemanager timemanager1=new Timemanager();
+        timemanager1.setPromotionid(promotion.getId());
+        /////////////////////////////////////////////
+        buymorePromotion.setPromotionid(promotion.getId());
+        timemanager.setPromotionid(promotion.getId());
+        List<BuymorePromotion> list=buymorePromotionMapper.select(buymorePromotion1);
+        List<Timemanager> list2=timemanagerMapper.select(timemanager1);
+        /////////////////////////////////////////////
+        for(int i=0;i<require1.length;i++){
+            buymorePromotion.setId(list.get(i).getId());
+            buymorePromotion.setRequire(require1[i]);
+            buymorePromotion.setDiscount(discount1[i]);
+            buymorePromotionMapper.updateByPrimaryKeySelective(buymorePromotion);
+            ///////////////////////////////////////////////////
+            timemanager.setId(list2.get(i).getId());
+            timemanager.setBuymoreid(list.get(i).getId());
+            timemanagerMapper.updateByPrimaryKey(timemanager);
+        }
+
+        promotionMapper.updateByPrimaryKey(promotion);
+
     }
 }
 

@@ -53,8 +53,7 @@ public class BuyMoreController {
     }
 
     @RequestMapping("/Testn")
-    public List<Promotion> Testn() {
-        Promotion promotion=new Promotion();
-        return promotionService.selectBuymorePromotion(promotion);
+    public String Testn(Promotion promotion, Timemanager timemanager) {
+        return ""+promotion.getId()+"||"+timemanager.getId();
     }
 }
