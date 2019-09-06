@@ -38,20 +38,22 @@ public class BuyMoreController {
         promotion.setPromotionstyle(7);
         Integer proid = promotionService.insertBuyMorePromotion(promotion);
         buymorePromotion.setPromotionid(proid);
+        timemanager.setPromotionid(proid);
 
         for (int i = 0; i < require1.length; i++) {
             buymorePromotion.setRequire(require1[i]);
             buymorePromotion.setDiscount(discount1[i]);
             buymorePromotion.setId(null);
+            timemanager.setId(null);
             buymorePromotionService.insertBuyMore(buymorePromotion);
+            timemanager.setBuymoreid(buymorePromotion.getId());
+            timemanagerService.insertTimeManager(timemanager);
         }
-        timemanager.setPromotionid(proid);
-        timemanagerService.insertTimeManager(timemanager);
         return "ok";
     }
 
     @RequestMapping("/Testn")
-    public List<BuymorePromotion> Testn() {
-        return buymorePromotionService.selectBuymoreAndTime(18);
+    public String Testn(Promotion promotion, Timemanager timemanager) {
+        return ""+promotion.getId()+"||"+timemanager.getId();
     }
 }

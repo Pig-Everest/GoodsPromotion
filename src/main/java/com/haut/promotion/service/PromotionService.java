@@ -45,6 +45,11 @@ public interface PromotionService {
     Promotion  selectPromotion(Integer promotionId);
 
     /**
+     * 通过promotionid来查询该订单的所有信息
+     * @param promotion
+     * @return
+     */
+    public List<Promotion> selectBuymorePromotion(Promotion promotion);    /**
      * 通过优惠券类型查询促销表信息
      * @return 促销ids
      */

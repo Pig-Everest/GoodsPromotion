@@ -10,17 +10,75 @@
     <title>Title</title>
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row"> </div>
-    <table class="table table-striped table-hover">
-        <tr>
-            <td >...</td>
-            <td >...</td>
-            <td >...</td>
-            <td >...</td>
-            <td >...</td>
-        </tr>
-    </table>
+<div class="container">
+    <div class="row">
+        &emsp;
+    </div>
+
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <form class="form-inline" action="" method="get">
+                <div class="form-group">
+                    <label for="goodsId">商品编码</label>
+                    <input type="text" class="form-control" id="goodsId" placeholder="id">
+                </div>
+                &emsp;&emsp;<div class="form-group">
+                <label for="skuId">sku编码</label>
+                <input type="text" class="form-control" id="skuId" placeholder="typeid">
+            </div>
+                &emsp;&emsp;<div class="form-group">
+                <label for="goodsName">商品名称</label>
+                <input type="text" class="form-control" id="goodsName" placeholder="name">
+                <button type="submit" class="btn btn-default">查询</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row">&emsp;</div>
+    <div class="row">&emsp;</div>
+    <div class="row">
+        <div class="col-md-2">
+            <h4 style="color:#CC3300;">选择参加活动的商品</h4>
+        </div>
+    </div>
+    <div class="row">
+
+        <table class="table table-hover">
+            <tr>
+                <th><input type="checkbox" name="goodsId"></th>
+                <th>商品编码</th>
+                <th>sku编码</th>
+                <th>商品名称</th>
+                <th>京东价</th>
+                <th>优惠内容</th>
+                <th>操作</th>
+            </tr>
+            <div class="row">
+                <tr>
+                    <td><input type="checkbox" name="goodsId"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+            </div>
+
+        </table>
+    </div>
+    <div class="row">
+
+        <div class="col-md-2">
+            共条记录&emsp;共页
+        </div>
+    </div>
+
 </div>
 </body>
 </html>

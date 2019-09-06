@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>活动制定页面</title>
+		 <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="/js/jquery-1.4.2.js"></script>
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+
+	<div class="row">
+		&nbsp;
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+            <p style="font-size: 15px; ">您当前所在位置><a>促销系统</a>><a>定金促销</a>>创建定金促销</p>
+		</div>
+
+		<div class="row">
+		&nbsp;
+	</div>
+		</div>
+			&emsp;&emsp;<div class="row" >
+			 <h3 style="color:#CC3300; padding-left: 20px">定金促销</h3>
+		</div>
+            <div class="row"><h4 style="color:#CC3300;padding-left: 20px">促销规则</h4></div>
+		<div style="width: auto; height: 450px; background-color:beige;">
+			<br />
+			<form class="form-inline" action="http://localhost:8080/promotion_rule" method="post">
+
+             <div class="row">
+                <div class="form-group">
+                  &emsp;&emsp;<label >*推广范围：
+                <input type="text" value="全平台通用" class="form-control" name="promotionplatfrom" disabled="disabled" />
+                </label>
+                </div>
+             </div>
+               <br>
+             <div class="row">
+			<div class="form-group">
+			&emsp;&emsp;<label >*活动名称：
+				<input type="hidden" value="1" name="id">
+			<input type="text" class="form-control" name = "promotionname" placeholder="活动名称" />
+            </label>
+			</div>
+                </div>
+                <br />
+                <div class="row">
+			<div class="form-group">
+			&emsp;&emsp;<label >*定金预购时间：</label>
+			<input type="datetime-local" class="form-control" name = "starttime" />&nbsp;至&nbsp;
+			<input type="datetime-local" class="form-control" name = "endtime"  />
+			</div>
+                    </div>
+                <br>
+                <div class="row">
+                <div class="form-group">
+                   &emsp;&emsp;<label >*定金交付时间：</label>
+                    <input type="datetime-local" class="form-control" name = "beginDate" />&nbsp;至&nbsp;
+                    <input type="datetime-local" class="form-control" name = "endDate"  />
+                </div>
+                </div>
+
+			<br />
+			<div class="form-group">
+                &emsp;<label >*定金规则：</label><input class="form-control" name = "promotionType" value="定金预购" disabled />
+
+			</input>
+			</div>
+			<br />
+			<br />
+				&emsp;<label >*定金金额：<input type="text" class="form-control"  name = "frontmoney" placeholder="金额大小" /></label>
+				&emsp;<label >*定金价值：<input type="text" class="form-control"  name = "nowmoney" placeholder="可以抵扣的金额" /></label>
+				<br /><br />
+				<div class="row">&emsp;&emsp;<label >*店铺链接：<input type="text" class="form-control"  name = "promotionlinks" placeholder="店铺url" /></label><br />
+			<div style="margin-left: 700px;"><input  class="btn btn-info"  type="submit" id="submit" value="下一步" /></div>
+
+				</div>
+			</form>
+		</div>
+
+		</div>
+		<script type="text/javascript">
+			$(function () {
+
+			});
+		</script>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    	<script src="/js/bootstrap.min.js"></script>
+
+	</body>
+</html>
