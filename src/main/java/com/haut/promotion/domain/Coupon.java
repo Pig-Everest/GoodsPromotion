@@ -19,22 +19,16 @@ public class Coupon {
     private String couponname;
 
     /**
-     * 保质期天数 保质期天数
+     * 优惠卷条件 （满多少减多少等）
      */
-    @Column(name = "`days`")
-    private Integer days;
+    @Column(name = "couponCondition")
+    private Integer couponcondition;
 
     /**
-     * 发行数量 发行数量
+     * 外键->优惠券类型表.id
      */
-    @Column(name = "`number`")
-    private Integer number;
-
-    /**
-     * 促销编号 外键->促销表
-     */
-    @Column(name = "promotionId")
-    private Integer promotionid;
+    @Column(name = "couponStyle")
+    private Integer couponstyle;
 
     /**
      * 是否公开 1公开 0不公开
@@ -47,36 +41,6 @@ public class Coupon {
      */
     @Column(name = "limitedNumber")
     private Integer limitednumber;
-
-    /**
-     * 面值 面值
-     */
-    @Column(name = "`value`")
-    private Integer value;
-
-    /**
-     * 满减的满 满多少钱可以使用优惠卷
-     */
-    @Column(name = "`full`")
-    private Integer full;
-
-    /**
-     * 满减的减 满多少钱减多少钱
-     */
-    @Column(name = "redution")
-    private Integer redution;
-
-    /**
-     * 折扣 优惠卷是折扣卷的折扣
-     */
-    @Column(name = "discount")
-    private Integer discount;
-
-    /**
-     * 外键->优惠券类型表.id
-     */
-    @Column(name = "couponType")
-    private Integer coupontype;
 
     /**
      * 获取优惠卷编码 优惠卷表主键
@@ -115,57 +79,39 @@ public class Coupon {
     }
 
     /**
-     * 获取保质期天数 保质期天数
+     * 获取优惠卷条件 （满多少减多少等）
      *
-     * @return days - 保质期天数 保质期天数
+     * @return couponCondition - 优惠卷条件 （满多少减多少等）
      */
-    public Integer getDays() {
-        return days;
+    public Integer getCouponcondition() {
+        return couponcondition;
     }
 
     /**
-     * 设置保质期天数 保质期天数
+     * 设置优惠卷条件 （满多少减多少等）
      *
-     * @param days 保质期天数 保质期天数
+     * @param couponcondition 优惠卷条件 （满多少减多少等）
      */
-    public void setDays(Integer days) {
-        this.days = days;
+    public void setCouponcondition(Integer couponcondition) {
+        this.couponcondition = couponcondition;
     }
 
     /**
-     * 获取发行数量 发行数量
+     * 获取外键->优惠券类型表.id
      *
-     * @return number - 发行数量 发行数量
+     * @return couponStyle - 外键->优惠券类型表.id
      */
-    public Integer getNumber() {
-        return number;
+    public Integer getCouponstyle() {
+        return couponstyle;
     }
 
     /**
-     * 设置发行数量 发行数量
+     * 设置外键->优惠券类型表.id
      *
-     * @param number 发行数量 发行数量
+     * @param couponstyle 外键->优惠券类型表.id
      */
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
-    /**
-     * 获取促销编号 外键->促销表
-     *
-     * @return promotionId - 促销编号 外键->促销表
-     */
-    public Integer getPromotionid() {
-        return promotionid;
-    }
-
-    /**
-     * 设置促销编号 外键->促销表
-     *
-     * @param promotionid 促销编号 外键->促销表
-     */
-    public void setPromotionid(Integer promotionid) {
-        this.promotionid = promotionid;
+    public void setCouponstyle(Integer couponstyle) {
+        this.couponstyle = couponstyle;
     }
 
     /**
@@ -202,95 +148,5 @@ public class Coupon {
      */
     public void setLimitednumber(Integer limitednumber) {
         this.limitednumber = limitednumber;
-    }
-
-    /**
-     * 获取面值 面值
-     *
-     * @return value - 面值 面值
-     */
-    public Integer getValue() {
-        return value;
-    }
-
-    /**
-     * 设置面值 面值
-     *
-     * @param value 面值 面值
-     */
-    public void setValue(Integer value) {
-        this.value = value;
-    }
-
-    /**
-     * 获取满减的满 满多少钱可以使用优惠卷
-     *
-     * @return full - 满减的满 满多少钱可以使用优惠卷
-     */
-    public Integer getFull() {
-        return full;
-    }
-
-    /**
-     * 设置满减的满 满多少钱可以使用优惠卷
-     *
-     * @param full 满减的满 满多少钱可以使用优惠卷
-     */
-    public void setFull(Integer full) {
-        this.full = full;
-    }
-
-    /**
-     * 获取满减的减 满多少钱减多少钱
-     *
-     * @return redution - 满减的减 满多少钱减多少钱
-     */
-    public Integer getRedution() {
-        return redution;
-    }
-
-    /**
-     * 设置满减的减 满多少钱减多少钱
-     *
-     * @param redution 满减的减 满多少钱减多少钱
-     */
-    public void setRedution(Integer redution) {
-        this.redution = redution;
-    }
-
-    /**
-     * 获取折扣 优惠卷是折扣卷的折扣
-     *
-     * @return discount - 折扣 优惠卷是折扣卷的折扣
-     */
-    public Integer getDiscount() {
-        return discount;
-    }
-
-    /**
-     * 设置折扣 优惠卷是折扣卷的折扣
-     *
-     * @param discount 折扣 优惠卷是折扣卷的折扣
-     */
-    public void setDiscount(Integer discount) {
-        this.discount = discount;
-    }
-
-    /**
-     * 获取外键->优惠券类型表.id
-     *
-     * @return couponType - 外键->优惠券类型表.id
-     */
-    public Integer getCoupontype() {
-        return coupontype;
-    }
-
-    /**
-     * 设置外键->优惠券类型表.id
-     *
-     * @param coupontype 外键->优惠券类型表.id
-     */
-    public void setCoupontype(Integer coupontype) {
-        this.coupontype = coupontype;
     }
 }

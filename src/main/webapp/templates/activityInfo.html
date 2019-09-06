@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>活动制定页面</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+        &nbsp;
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p style="font-size: 15px; ">您当前所在位置>促销系统>定金促销>创建定金促销</p>
+        </div>
+
+        <div class="row">
+            &nbsp;
+        </div>
+    </div>
+    <h3 style="color:#CC3300;">定金促销</h3>
+    <h4 style="color:#CC3300;">促销规则</h4>
+    <div style="width: auto; height: 400px; background-color:beige;">
+        <br/>
+        <form class="form-inline" action="#" method="post">
+
+            &nbsp;&nbsp;&nbsp;<label for="exampleInputName2">*推广范围：</label><input type="checkbox" name="range"/>全平台通用
+            <input type="checkbox" name="range"/>限平台使用
+            <br/>
+            <br/>
+            <div class="form-group">
+                &nbsp;&nbsp;&nbsp;<label for="exampleInputName2">*活动名称：</label>
+                <input type="text" class="form-control" name="activityName" placeholder="活动名称"/>
+            </div>
+
+            <div class="form-group">
+                &nbsp;&nbsp;&nbsp;<label for="exampleInputName2">*活动时间：</label>
+                <input type="datetime-local" class="form-control" name="beginDate"/>&nbsp;至&nbsp;
+                <input type="datetime-local" class="form-control" name="endDate"/>
+            </div>
+
+            <br/>
+            <br/>
+            <div class="form-group">
+                &nbsp;&nbsp;&nbsp;<label for="exampleInputName2">*定金规则：</label><select class="form-control" name="type">
+                <option name="type">定金预购</option>
+                <option name="type">定金杠杆</option>
+            </select>
+            </div>
+            <div class="form-group">
+                &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;<label for="exampleInputName2">*规则描述：</label> <textarea
+                    class="form-control" rows="3"></textarea>
+            </div>
+            <br/>
+            <br/>
+            &nbsp;&nbsp;&nbsp;<label for="exampleInputName2">*定金金额：</label><input type="text" class="form-control"
+                                                                                  name="activityMoney"
+                                                                                  placeholder="金额大小"/>
+            &nbsp;&nbsp;&nbsp;<label for="exampleInputName2">*商品活动链接：</label><input type="text" class="form-control"
+                                                                                    name="activityUrl"
+                                                                                    placeholder="url"/><br/><br/>
+            <div style="margin-left: 700px;"><input class="btn btn-info" type="button" id="submit" value="下一步"/></div>
+        </form>
+    </div>
+
+</div>
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

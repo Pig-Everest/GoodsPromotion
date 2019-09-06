@@ -4,32 +4,168 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script type="text/javascript" src="/js/jquery-3.1.0.min.js"></script>
-
+    <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <body>
-<div class="container-fluid">
-    <div >
-        <div class="col-lg-3">
-            名称：
-            <input name="" type="text" placeholder="请输入优惠券名称"/>
+<form id="form1" method="post">
+    <div class="container-fluid">
+        <div class="row">
+            &nbsp;
         </div>
-        <div class="col-lg-3">
-            类型：
-            <select name="">
-                <option value="0">请选择优惠券类型</option>
-            </select>
+        <div class="row">
+            <div class="col-md-4">
+                <p style="font-size: 15px; ">您当前所在位置>促销系统>优惠券促销>生成优惠券</p>
+            </div>
+
+            <div class="row">
+                &nbsp;
+            </div>
         </div>
-        <div class="col-lg-3">
-            面值：
-            <input type="text" placeholder="请输入优惠券面值"/>
-        </div>
-        <div class="col-lg-3">
-            条件：
-            <input type="text" placeholder="请输入优惠券使用条件"/>
+        <h3 style="color:#CC3300;">生成优惠券</h3>
+        <h4 style="color:#CC3300;">优惠券生成规则</h4>
+        <div style="width: auto; height: 400px; background-color:beige;">
+            <div class="row">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>*推广范围：</label><input type="checkbox"
+                                                                                      name="promotionplatfrom"
+                                                                                      value="全平台通用"/>全平台通用
+                <input type="checkbox" name="promotionplatfrom" value="限平台使用"/>限平台使用
+            </div>
+            <br/>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-2">
+                        &nbsp;&nbsp;&nbsp;<label>*领取时间：</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input name="startTime" type="datetime-local" class="form-control"/>
+                    </div>
+                    <div class="col-md-1">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至
+                    </div>
+                    <div class="col-md-3">
+                        <input name="endTime" type="datetime-local" class="form-control"/>
+                    </div>
+                    <div class="col-md-3">
+                        &nbsp;&nbsp;&nbsp;*有效时间：
+                        <input name="days" type="text" placeholder="请输入优惠券有效时间"/>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-md-4">
+                    &nbsp;&nbsp;&nbsp;*活动名称：
+                    <input name="promotionname" type="text" placeholder="请输入活动名称"/>
+                </div>
+                <div class="col-md-4">
+                    &nbsp;&nbsp;&nbsp;*优惠券名称：
+                    <input name="couponname" type="text" placeholder="请输入优惠券名称"/>
+                </div>
+                <div class="col-md-4">
+                    &nbsp;&nbsp;&nbsp;*类型：
+                    <select name="coupontype" id="type">
+                        <option value="0">请选择优惠券类型</option>
+                        <option value="1">-----满减卷-----</option>
+                        <option value="2">-----现金卷-----</option>
+                        <option value="3">-----折扣卷-----</option>
+                    </select>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-md-3">
+                    &nbsp;&nbsp;&nbsp;*发行：
+                    <input name="number" type="text" placeholder="请输入优惠券发行数量"/>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;&nbsp;&nbsp;*限领：
+                    <input name="limitednumber" type="text" placeholder="请输入优惠券每人限定领取数量"/>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;&nbsp;&nbsp;*是否公开：
+                    <select name="isopen">
+                        <option value="0">--不公开--</option>
+                        <option value="1">---公开---</option>
+                    </select>
+                </div>
+            </div>
+            <br/>
+            <div id="manjian" hidden>
+                <div class="row">
+                    <div class="col-md-5">
+                        &nbsp;&nbsp;&nbsp;*满多少：
+                        <input name="full" type="text" placeholder="请输入满减卷满多少"/>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5">
+                        &nbsp;&nbsp;&nbsp;*减多少：
+                        <input name="redution" type="text" placeholder="请输入满减卷减多少"/>
+                    </div>
+                </div>
+            </div>
+            <div id="xianjin" hidden>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        &nbsp;&nbsp;&nbsp;*面额：
+                        <input name="value" type="text" placeholder="请输入现金券面额为多少"/>
+                    </div>
+                </div>
+            </div>
+            <div id="zhekou" hidden>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        &nbsp;&nbsp;&nbsp;*折扣：
+                        <input name="discount" type="text" placeholder="请输入折扣券折扣力度"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <input type="button" id="sub" value="确认提交"/>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</form>
 </body>
 <script type="text/javascript">
+    $(function () {
+        $("#sub").bind("click", function () {
+            alert(233);
+            $.ajax({
+                url: "http://192.168.1.11:8080/createCoupon",
+                type: "post",
+                data: $("#form1").serialize(),
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    alert(data.data);
+                }
+            });
+        })
+        $("#type").change(function () {
+            var a = $(this).val();
+            if (a == 1) {
+                $("#manjian").removeAttr("hidden");
+                $("#xianjin").attr("hidden", "hidden");
+                $("#zhekou").attr("hidden", "hidden");
+            } else if (a == 2) {
+                $("#xianjin").removeAttr("hidden");
+                $("#manjian").attr("hidden", "hidden");
+                $("#zhekou").attr("hidden", "hidden");
+            } else if (a == 3) {
+                $("#zhekou").removeAttr("hidden");
+                $("#manjian").attr("hidden", "hidden");
+                $("#xianjin").attr("hidden", "hidden");
+            } else if (a == 0) {
+                $("#manjian").attr("hidden", "hidden");
+                $("#xianjin").attr("hidden", "hidden");
+                $("#zhekou").attr("hidden", "hidden");
+            }
+        });
+    });
 </script>
 </html>
