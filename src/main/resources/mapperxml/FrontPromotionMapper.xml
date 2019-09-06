@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haut.promotion.mapper.FrontPromotionMapper">
+  <resultMap id="BaseResultMap" type="com.haut.promotion.domain.FrontPromotion">
+    <!--@mbg.generated generated on Wed Aug 28 14:49:58 CST 2019.-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="frontmoney" jdbcType="DECIMAL" property="frontmoney" />
+    <result column="nowmoney" jdbcType="DECIMAL" property="nowmoney" />
+    <result column="promotionid" jdbcType="INTEGER" property="promotionid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Wed Aug 28 14:49:58 CST 2019.-->
+    id, frontmoney, nowmoney, promotionid
+  </sql>
+</mapper>

@@ -29,7 +29,7 @@
       <!--@mbg.generated generated on Wed Aug 28 09:22:23 CST 2019.-->
         <id column="id" jdbcType="INTEGER" property="id" />
         <result column="stylename" jdbcType="VARCHAR" property="stylename" />
-        <result column="promotionId" jdbcType="INTEGER" property="promotionid" />
+     <!--   <result column="promotionId" jdbcType="INTEGER" property="promotionid" />-->
     </association>
 
   </association>

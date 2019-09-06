@@ -14,6 +14,6 @@ public class testQuartz extends QuartzJobBean {
 
     @Override
     protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        System.out.println(String.format("hello %s",this.name));
+       /* System.out.println(String.format("hello %s",this.name));*/
     }
 }

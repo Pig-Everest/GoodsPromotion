@@ -42,12 +42,6 @@ public class Promotion {
     @Column(name = "promotionlinks")
     private String promotionlinks;
 
-    /**
-     * 限制数量
-     */
-    @Column(name = "limitednumber")
-    private String limitednumber;
-
     @Column(name = "promotionstate")
     private Integer promotionstate;
 
@@ -166,40 +160,32 @@ public class Promotion {
     public void setPromotionlinks(String promotionlinks) {
         this.promotionlinks = promotionlinks;
     }
+    @Column(name = "promotionStyle")
+   private Integer promotionstyle;
 
-    /**
-     * 获取限制数量
-     *
-     * @return limitednumber - 限制数量
-     */
-    public String getLimitednumber() {
-        return limitednumber;
+    public Integer getPromotionstyle() {
+        return promotionstyle;
     }
 
-    /**
-     * 设置限制数量
-     *
-     * @param limitednumber 限制数量
-     */
-    public void setLimitednumber(String limitednumber) {
-        this.limitednumber = limitednumber;
+    public void setPromotionStyle(Integer promotionstyle) {
+        this.promotionstyle = promotionstyle;
     }
-/**
+
+  /*
+    设置促销类型名
+     */
+
+    /**
  * 促销状态
  */
 
     /**
      * 促销类型表，与促销表一对一
      */
-    @Transient
-    private Promotionstyle promotionStyle;
+   // @Transient
+ //   private Promotionstyle promotionStyle1;
 
-    public Promotionstyle getPromotionStyle() {
-        return promotionStyle;
-    }
 
-    public void setPromotionStyle(Promotionstyle promotionStyle) {
-        this.promotionStyle = promotionStyle;
-    }
+
 
 }

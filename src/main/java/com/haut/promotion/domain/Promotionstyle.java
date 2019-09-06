@@ -78,3 +78,4 @@ public class Promotionstyle {
         this.promotionid = promotionid;
     }
 }
+
