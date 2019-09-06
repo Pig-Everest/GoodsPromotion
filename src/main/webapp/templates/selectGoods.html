@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>挑选商品</title>
@@ -10,6 +10,7 @@
 
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/jquery-1.4.2.js"></script>
 </head>
 <body>
 
@@ -49,43 +50,122 @@
         </div>
     </div>
     <div class="row">
-
-        <table class="table table-hover">
-            <tr>
-                <th><input type="checkbox" name="goodsId"></th>
-                <th>商品编码</th>
-                <th>sku编码</th>
-                <th>商品名称</th>
-                <th>京东价</th>
-                <th>优惠内容</th>
-                <th>操作</th>
-            </tr>
-            <div class="row">
+        <div action="#" method="post">
+            <table class="table table-hover">
                 <tr>
-                    <td><input type="checkbox" name="goodsId"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
+                    <th><input type="checkbox" name="goodsId" id="goodsList"></th>
+                    <th>商品编码</th>
+                    <th>sku编码</th>
+                    <th>商品名称</th>
+                    <th>京东价</th>
+                    <th>优惠内容</th>
+                    <th>库存数量</th>
+                    <th>活动数量</th>
                 </tr>
-            </div>
 
-        </table>
-    </div>
-    <div class="row">
 
-        <div class="col-md-2">
-            共条记录&emsp;共页
+                <tr th:each="bk,sta:${list}">
+                    <td><input type="checkbox" name="goodsId" id="goodsItem" value="th:text='${bk.goodsId}' "></td>
+                    <td name="goodsid" th:text="${bk.goodsId}">id</td>
+                    <input type="hidden" name="goodsid" value="2122"/>
+                    <td th:text="${bk.goodsType}">goodsType</td>
+                    <td th:text="${bk.goodsName}">goodsName</td>
+                    <td th:text="${bk.goodsPrice}">goodsPrice</td>
+                    <td th:text="${sta.index}">goodsPrice</td>
+                    <input type="hidden" id="storeId"/>
+                </tr>
+                <tr th:each="bk,sta:${list}">
+                    <td><input type="checkbox" name="goodsId" id="goodsItem" value="th:text='${bk.goodsId}' "></td>
+                    <td name="goodsid" th:text="${bk.goodsId}">233</td>
+                    <input type="hidden" name="goodsid" value="2122"/>
+                    <td th:text="${bk.goodsType}">333</td>
+                    <td th:text="${bk.goodsName}">goodsName</td>
+                    <td th:text="${bk.goodsPrice}">goodsPrice</td>
+                    <td th:text="${sta.index}">goodsPrice</td>
+                    <input type="hidden" id="storeId"/>
+                </tr>
+            </table>
+            <a class="allpage"><b th:text="'共 '+ ${pageInfo.pages}+ ' 页'"></b></a>
+            <a th:if="${pageInfo.hasPreviousPage} == true"
+               th:href="@{'index?currentPage=' + ${pageInfo.prePage}}">上一页</a>
+            <a th:href="@{'index?currentPage=' + ${i}}"
+               th:each="i :${#numbers.sequence(pageInfo.firstPage, pageInfo.lastPage)}" th:text="${i}"
+               th:class="${pageInfo.pageNum == i}? 'curPage' :'' "></a>
+
+            &nbsp;&nbsp;<a th:href="@{'index?currentPage=' + ${pageInfo.nextPage}}"
+                           th:if="${pageInfo.hasNextPage} == true">下一页</a>
+            &nbsp;&nbsp;<a th:href="@{'http://localhost:8080/test111'+ ${pageInfo.pages}}">尾页</a>
+
         </div>
+        <div>
+            <input type="button" id="testSubmit" value="提交">
+        </div>
+        </form>
+        <script type="text/javascript">
+
+            $("#goodsList").click(function () {
+                    if (this.checked) {
+                        $("input[name='goodsId']").each(function () {
+                            this.checked = true;
+                        });
+                    } else {
+                        $("input[name='goodsId']").each(function () {
+                            this.checked = false;
+                        });
+                    }
+                }
+            );
+            /*var list = [];
+            $("input[type='checkbox']").bind("click", function () {
+                var td = $(this).parent().parent().find("td");
+                var obj = {};
+                var key = {"goodsid": "", "goodstype": "", "goodsname": "", "goodsPrice": ""};
+                key.goodsid = td.eq(1).html();
+                key.goodstype = td.eq(2).html();
+                key.goodsname = td.eq(3).html();
+                key.goodsPrice = td.eq(4).html();
+                alert(key.goodsid+"  "+key.goodstype+"  "+key.goodsname+"  "+key.goodsPrice);
+                list.push(key);
+            });*/
+
+
+            $("#testSubmit").click(function () {
+                /*alert("1");
+                showCol();*/
+                var list = [];
+                for(i=0;i<localStorage.length;i++){
+                    alert(localStorage.key(i)+":"+localStorage.getItem(localStorage.key(i)));
+                }
+                $("input:checkbox:checked").each(function () {
+                    var td = $(this).parent().parent().find("td");
+                    var key = {"goodsid": "", "goodstype": "", "goodsname": "", "goodsPrice": ""};
+                    key.goodsid = td.eq(1).html();
+                    key.goodstype = td.eq(2).html();
+                    key.goodsname = td.eq(3).html();
+                    key.goodsPrice = td.eq(4).html();
+                    alert(key.goodsid+"  "+key.goodstype+"  "+key.goodsname+"  "+key.goodsPrice);
+                    localStorage.setItem(i+"key",JSON.stringify(key));
+                    list.push(key);
+                });
+            });
+
+            function showCol() {
+                alert("2");
+                var check = $("input[name='goodsItem']:checked");//选中的复选框
+                check.each(function () {
+                    alert("3")
+                    var row = $(this).parent("td").parent("tr");
+                    var name = row.find("[name='goodsid']").html();//注意html()和val()
+                    //var age=row.find("[name='age']").html();
+                    console.info(name + ":");
+                });
+            }
+        </script>
+
     </div>
 
-</div>
 
-
-<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

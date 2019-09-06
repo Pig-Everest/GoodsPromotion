@@ -7,7 +7,9 @@ import javax.annotation.Resource;
 
 import com.haut.promotion.service.PromotionService;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -66,6 +68,23 @@ public class PromotionServiceImpl implements PromotionService {
 
         return promotion;
     }
+
+    /**
+     * 通过优惠券类型查询促销表信息
+     *
+     * @return 促销ids
+     */
+    @Override
+    public List<Integer> selectPromotionByCouponType() {
+        Promotion promotion = new Promotion();
+        promotion.setPromotionstyle(8);
+        List<Integer> ids = new ArrayList<>();
+        for (Promotion promotion1 : promotionMapper.select(promotion)) {
+            ids.add(promotion1.getId());
+        }
+        return ids;
+    }
+
     /**
      * 添加多买促销表
      *

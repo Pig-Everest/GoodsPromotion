@@ -2,6 +2,8 @@ package com.haut.promotion.service;
 
 import com.haut.promotion.domain.Timemanager;
 
+import java.util.List;
+
 public interface TimemanagerService {
     /**
      * 第五步，添加时间管理表
@@ -19,5 +21,12 @@ public interface TimemanagerService {
      * @return
      */
     Integer insertTimeManager(Timemanager timemanager);
+
+    /**
+     * 通过促销ids查询时间，并判断是否符合时间范围
+     * @param promotionIds
+     * @return 符合的促销ids
+     */
+    List<Integer> selectTimeByPromotionIds(List<Integer> promotionIds);
 }
 

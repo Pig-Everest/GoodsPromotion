@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haut.promotion.mapper.CouponreleaseMapper">
+  <resultMap id="BaseResultMap" type="com.haut.promotion.domain.Couponrelease">
+    <!--@mbg.generated generated on Fri Sep 06 11:29:42 CST 2019.-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="days" jdbcType="INTEGER" property="days" />
+    <result column="couponId" jdbcType="INTEGER" property="couponid" />
+    <result column="number" jdbcType="INTEGER" property="number" />
+    <result column="useBeginTime" jdbcType="VARCHAR" property="usebegintime" />
+    <result column="useEndTime" jdbcType="VARCHAR" property="useendtime" />
+    <result column="limitBeginTime" jdbcType="VARCHAR" property="limitbegintime" />
+    <result column="limitEndTime" jdbcType="VARCHAR" property="limitendtime" />
+    <result column="businessId" jdbcType="INTEGER" property="businessid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Fri Sep 06 11:29:42 CST 2019.-->
+    id, `days`, couponId, `number`, useBeginTime, useEndTime, limitBeginTime, limitEndTime, 
+    businessId
+  </sql>
+</mapper>

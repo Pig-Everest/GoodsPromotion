@@ -51,4 +51,40 @@ public class GoodsServiceImpl implements GoodsService{
         }
         return promotionIds;
     }
+
+    /**
+     * 通过店铺id查询所关联的促销id
+     *
+     * @param id
+     * @return 促销ids
+     */
+    @Override
+    public List<Integer> selectPromotionIdByBusinessId(Integer id) {
+        Goods goods = new Goods();
+        goods.setBusinessid(id);
+        List<Integer> list = new ArrayList<>();
+        for (Goods goods1 : goodsMapper.select(goods)) {
+            list.add(goods1.getPromotionid());
+        }
+        return list;
+    }
+
+    /**
+     * 通过促销ids查询所关联的skuIds
+     *
+     * @param ids
+     * @return skuIds
+     */
+    @Override
+    public List<Integer> selectSkuIdsByPromotionIds(List<Integer> ids) {
+        Example example = new Example(Goods.class);
+        Criteria criteria = example.createCriteria();
+        criteria.andIn("promotionid",ids);
+        List<Goods> goodsList = goodsMapper.selectByExample(example);
+        List<Integer> list = new ArrayList<>();
+        for (Goods goods : goodsList) {
+            list.add(goods.getTypeid());
+        }
+        return list;
+    }
 }

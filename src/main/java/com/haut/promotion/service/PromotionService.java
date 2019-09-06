@@ -2,6 +2,7 @@ package com.haut.promotion.service;
 
 import com.haut.promotion.domain.Promotion;
 
+import java.util.List;
 import java.util.Map;
 
 public interface PromotionService {
@@ -42,6 +43,12 @@ public interface PromotionService {
      * @return 促销信息
      */
     Promotion  selectPromotion(Integer promotionId);
+
+    /**
+     * 通过优惠券类型查询促销表信息
+     * @return 促销ids
+     */
+    List<Integer> selectPromotionByCouponType();
 }
 
 
