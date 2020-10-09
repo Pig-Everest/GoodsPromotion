@@ -65,6 +65,7 @@ public class Promotion {
 
     @Transient
     private List<BuymorePromotion> buymoreList;
+
     public Integer getPromotionstate() {
         return promotionstate;
     }
@@ -180,22 +181,6 @@ public class Promotion {
     public void setPromotionlinks(String promotionlinks) {
         this.promotionlinks = promotionlinks;
     }
-    @Column(name = "promotionStyle")
-   private Integer promotionstyle;
-
-    /**
-     * @return promotionstate
-     */
-    public Integer getPromotionstate() {
-        return promotionstate;
-    }
-
-    /**
-     * @param promotionstate
-     */
-    public void setPromotionstate(Integer promotionstate) {
-        this.promotionstate = promotionstate;
-    }
 
     /**
      * 获取外键->促销类型表 promotionStyle
@@ -203,45 +188,42 @@ public class Promotion {
      * @return promotionStyle - 外键->促销类型表 promotionStyle
      */
     public Integer getPromotionstyle() {
-        return promotionstyle;    }
-
-    public Integer getPromotionstyle() {
         return promotionstyle;
+    }
+
 
     /**
-  /**
+     * /**
      * 设置外键->促销类型表 promotionStyle
      *
      * @param promotionstyle 外键->促销类型表 promotionStyle
      */
     public void setPromotionstyle(Integer promotionstyle) {
         this.promotionstyle = promotionstyle;
-} public void setPromotionStyle(Integer promotionstyle) {
+    }
+
+    public void setPromotionStyle(Integer promotionstyle) {
         this.promotionstyle = promotionstyle;
-}
+    }
 
 
-
-    
-
-   /**
+    /**
      * @return promotiondescripe
-     * @return promotiondescripe
-    设置促销类型名
+     * 设置促销类型名
      */
-}
     public String getPromotiondescripe() {
         return promotiondescripe;
     }
     /**
      * @param promotiondescripe
- * 促销状态
- */
+     * 促销状态
+     */
 
     /**
-     * 促销类型表，与促销表一对一     */
+     * 促销类型表，与促销表一对一
+     */
     public void setPromotiondescripe(String promotiondescripe) {
         this.promotiondescripe = promotiondescripe;
     }   // @Transient
- //   private Promotionstyle promotionStyle1;
+    //   private Promotionstyle promotionStyle1;
 }

@@ -3,6 +3,7 @@ package com.haut.promotion.service.impl;
 import com.haut.promotion.domain.Promotion;
 import com.haut.promotion.mapper.PromotionMapper;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 
 import com.haut.promotion.service.PromotionService;
@@ -57,13 +58,15 @@ public class PromotionServiceImpl implements PromotionService {
         map.put("promotiondescripe", promotion.getPromotiondescripe());
         return map;
     }
+
     /**
      * 通过促销信息组合查询查询促销表信息 封装成对象
      *
      * @param promotionId 促销id
      * @return 促销信息
      */
-     public Promotion  selectPromotion(Integer promotionId){
+    @Override
+    public Promotion selectPromotion(Integer promotionId) {
         Promotion promotion = promotionMapper.selectByPrimaryKey(promotionId);
 
         return promotion;
@@ -85,7 +88,9 @@ public class PromotionServiceImpl implements PromotionService {
         return ids;
     }
 
+    /**
      * 通过promotionid来查询该订单的所有信息
+     *
      * @param promotion
      * @return
      */
@@ -94,7 +99,8 @@ public class PromotionServiceImpl implements PromotionService {
         return promotionMapper.selectBuymorePromotion(promotion);
     }
 
-    /**     * 添加多买促销表
+    /**
+     * 添加多买促销表
      *
      * @param promotion
      * @return
@@ -112,16 +118,16 @@ public class PromotionServiceImpl implements PromotionService {
      * @return
      */
 
+    @Override
     public Integer isertPromotion(Promotion promotion) {
         promotionMapper.insertSelective(promotion);
         return promotion.getId();
     }
 
 
-
-  @Override
+    @Override
     public int addPromotion(Promotion p) {
-        return promotionMapper.insert( p);
+        return promotionMapper.insert(p);
     }
 }
 
